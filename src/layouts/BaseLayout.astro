@@ -1,0 +1,268 @@
+
+---
+// Import components and styles
+import '../styles/global.css';
+
+// Define props
+export interface Props {
+  title: string;
+  description?: string;
+  lang: 'zh' | 'en' | 'fr';
+}
+
+// Destructure props with defaults
+const { 
+  title, 
+  description = "阿波罗保险公司 - 专业的房屋、汽车和商业保险服务", 
+  lang = "zh"
+} = Astro.props;
+
+// Language mapping for UI elements
+const uiText = {
+  zh: {
+    home: "首页",
+    about: "公司介绍",
+    services: "服务介绍",
+    team: "团队介绍",
+    claims: "报险流程",
+    faq: "常见问题",
+    contact: "联系我们",
+    language: "语言",
+    footer: {
+      rights: "版权所有 © 2025 阿波罗保险公司",
+      backToTop: "返回顶部"
+    }
+  },
+  en: {
+    home: "Home",
+    about: "About",
+    services: "Services",
+    team: "Our Team",
+    claims: "Claims",
+    faq: "FAQ",
+    contact: "Contact",
+    language: "Language",
+    footer: {
+      rights: "Copyright © 2025 Apollo Insurance",
+      backToTop: "Back to Top"
+    }
+  },
+  fr: {
+    home: "Accueil",
+    about: "À Propos",
+    services: "Services",
+    team: "Notre Équipe",
+    claims: "Réclamations",
+    faq: "FAQ",
+    contact: "Contact",
+    language: "Langue",
+    footer: {
+      rights: "Droits d'auteur © 2025 Assurance Apollo",
+      backToTop: "Haut de Page"
+    }
+  }
+};
+
+// Define current UI text based on language
+const ui = uiText[lang];
+
+// Navigation links with localized paths
+const navLinks = [
+  { label: ui.home, path: `/${lang}` },
+  { label: ui.about, path: `/${lang}/about` },
+  { label: ui.services, path: `/${lang}/services` },
+  { label: ui.team, path: `/${lang}/team` },
+  { label: ui.claims, path: `/${lang}/claims` },
+  { label: ui.faq, path: `/${lang}/faq` },
+  { label: ui.contact, path: `/${lang}/contact` }
+];
+
+// Current path for highlighting active links
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Apollo Insurance</title>
+  </head>
+  <body>
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+      <div class="container py-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a href={`/${lang}`} class="text-primary font-bold text-xl md:text-2xl">
+            {lang === 'zh' ? '阿波罗保险公司' : lang === 'fr' ? 'Assurance Apollo' : 'Apollo Insurance'}
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="md:hidden text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-6">
+            {navLinks.map(link => (
+              <a 
+                href={link.path} 
+                class={`hover:text-primary transition-colors ${currentPath === link.path ? 'text-primary font-semibold' : 'text-dark'}`}
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <!-- Language Selector -->
+            <div class="relative group">
+              <button class="flex items-center space-x-1 text-dark hover:text-primary">
+                <span>{ui.language}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <a href={currentPath.replace(/^\/(zh|en|fr)/, '/zh')} class={`block px-4 py-2 hover:bg-light ${lang === 'zh' ? 'text-primary font-semibold' : 'text-dark'}`}>
+                  简体中文
+                </a>
+                <a href={currentPath.replace(/^\/(zh|en|fr)/, '/en')} class={`block px-4 py-2 hover:bg-light ${lang === 'en' ? 'text-primary font-semibold' : 'text-dark'}`}>
+                  English
+                </a>
+                <a href={currentPath.replace(/^\/(zh|en|fr)/, '/fr')} class={`block px-4 py-2 hover:bg-light ${lang === 'fr' ? 'text-primary font-semibold' : 'text-dark'}`}>
+                  Français
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+          <nav class="flex flex-col space-y-4">
+            {navLinks.map(link => (
+              <a 
+                href={link.path} 
+                class={`hover:text-primary transition-colors ${currentPath === link.path ? 'text-primary font-semibold' : 'text-dark'}`}
+              >
+                {link.label}
+              </a>
+            ))}
+            
+            <!-- Mobile Language Links -->
+            <div class="border-t border-gray-200 pt-2 mt-2">
+              <p class="text-sm text-gray-500 mb-2">{ui.language}</p>
+              <div class="flex space-x-4">
+                <a href={currentPath.replace(/^\/(zh|en|fr)/, '/zh')} class={`${lang === 'zh' ? 'text-primary font-semibold' : 'text-dark'}`}>
+                  简体中文
+                </a>
+                <a href={currentPath.replace(/^\/(zh|en|fr)/, '/en')} class={`${lang === 'en' ? 'text-primary font-semibold' : 'text-dark'}`}>
+                  English
+                </a>
+                <a href={currentPath.replace(/^\/(zh|en|fr)/, '/fr')} class={`${lang === 'fr' ? 'text-primary font-semibold' : 'text-dark'}`}>
+                  Français
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24 pb-12 min-h-[calc(100vh-64px)]">
+      <slot />
+    </main>
+
+    <footer class="bg-primary text-white py-8">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div class="col-span-1 md:col-span-2">
+            <h3 class="text-xl font-bold mb-4">
+              {lang === 'zh' ? '阿波罗保险公司' : lang === 'fr' ? 'Assurance Apollo' : 'Apollo Insurance'}
+            </h3>
+            <p class="mb-4 text-sm md:text-base">
+              {lang === 'zh' 
+                ? '阿波罗保险公司是AssurPV的子品牌，位于加拿大蒙特利尔南岸Brossard，专注为华人客户提供专业的保险服务。' 
+                : lang === 'fr' 
+                  ? 'Assurance Apollo est une sous-marque d\'AssurPV, située à Brossard sur la Rive-Sud de Montréal, Québec, Canada, spécialisée dans les services d\'assurance pour la clientèle chinoise.'
+                  : 'Apollo Insurance is a sub-brand of AssurPV, located in Brossard on the South Shore of Montreal, Quebec, Canada, specializing in insurance services for Chinese clientele.'}
+            </p>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-lg font-semibold mb-3">
+              {lang === 'zh' ? '服务' : lang === 'fr' ? 'Services' : 'Services'}
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a href={`/${lang}/services#home`} class="hover:text-secondary transition-colors">
+                  {lang === 'zh' ? '房屋保险' : lang === 'fr' ? 'Assurance Habitation' : 'Home Insurance'}
+                </a>
+              </li>
+              <li>
+                <a href={`/${lang}/services#auto`} class="hover:text-secondary transition-colors">
+                  {lang === 'zh' ? '汽车保险' : lang === 'fr' ? 'Assurance Auto' : 'Auto Insurance'}
+                </a>
+              </li>
+              <li>
+                <a href={`/${lang}/services#business`} class="hover:text-secondary transition-colors">
+                  {lang === 'zh' ? '商业保险' : lang === 'fr' ? 'Assurance Commerciale' : 'Business Insurance'}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="text-lg font-semibold mb-3">
+              {lang === 'zh' ? '联系我们' : lang === 'fr' ? 'Contactez-nous' : 'Contact Us'}
+            </h4>
+            <address class="not-italic">
+              <p class="mb-1">Brossard, Quebec, Canada</p>
+              <p class="mb-1">
+                <a href="tel:+15141234567" class="hover:text-secondary transition-colors">
+                  +1 (514) 123-4567
+                </a>
+              </p>
+              <p>
+                <a href="mailto:info@apolloinsurance.ca" class="hover:text-secondary transition-colors">
+                  info@apolloinsurance.ca
+                </a>
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-sm mb-4 md:mb-0">{ui.footer.rights}</p>
+          <a href="#" class="text-sm flex items-center hover:text-secondary transition-colors">
+            <span>{ui.footer.backToTop}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (menuToggle && mobileMenu) {
+          menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

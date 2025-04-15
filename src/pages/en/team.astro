@@ -1,0 +1,129 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'en';
+
+// Team members data
+const teamMembers = [
+  {
+    name: 'Ming Zhang',
+    title: 'Founder & CEO',
+    bio: 'Ming Zhang has over 15 years of experience in the insurance industry, having held executive positions at several well-known insurance companies. He is well-versed in the insurance market and focuses on providing professional insurance services to Chinese clients.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Ting Li',
+    title: 'Chief Operating Officer',
+    bio: 'Ting Li has extensive experience in insurance and customer service, responsible for the company\'s daily operations and customer relationship management. She is dedicated to optimizing service processes and enhancing the customer experience.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Qiang Wang',
+    title: 'Senior Insurance Advisor',
+    bio: 'Qiang Wang specializes in home and commercial insurance with over 10 years of industry experience. He excels at analyzing client needs and providing the most suitable insurance solutions.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Jing Chen',
+    title: 'Auto Insurance Specialist',
+    bio: 'Jing Chen has professional knowledge and extensive experience in auto insurance, familiar with various auto insurance products and policies, and can provide professional auto insurance consulting and services.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Wei Zhao',
+    title: 'Customer Service Manager',
+    bio: 'Wei Zhao manages the customer service team, ensuring clients receive prompt and professional service. He focuses on client needs and is committed to providing excellent customer service.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Xiaohong Lin',
+    title: 'Claims Specialist',
+    bio: 'Xiaohong Lin specializes in insurance claims services with extensive claims processing experience. She can efficiently handle various claims cases, ensuring clients receive timely compensation when needed.',
+    image: 'team-placeholder.jpg'
+  }
+];
+---
+
+<BaseLayout title="Our Team" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">Our Team</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">Our professional team is dedicated to providing you with the highest quality insurance services</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="mb-6">Meet Our Team</h2>
+        <p>Apollo Insurance has a professional, dedicated team, with each member having extensive experience in the insurance industry, committed to providing professional, attentive service to clients. Our team members are fluent in Chinese and local official languages, able to provide service in your native language, eliminating communication barriers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {teamMembers.map((member) => (
+          <div class="bg-light rounded-lg overflow-hidden shadow-sm">
+            <div class="aspect-[4/3] bg-gray-300 flex items-center justify-center text-gray-500">
+              Team Member Photo Placeholder
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
+              <p class="text-primary font-medium mb-3">{member.title}</p>
+              <p>{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-light">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="mb-6">Our Commitment</h2>
+        <p>As members of the Apollo Insurance team, we are committed to providing professional, honest, efficient service to every client, helping you choose the most suitable insurance plans and protecting your property and interests.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Professional Integrity</h3>
+          <p>We provide transparent, reliable insurance services with professional knowledge and integrity, building long-term trust relationships with clients.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Efficient Response</h3>
+          <p>We promise to quickly respond to client needs, providing timely consultation and service, ensuring client issues are promptly resolved.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Client First</h3>
+          <p>We always put our clients' needs first, providing personalized insurance solutions and attentive service experiences, ensuring client satisfaction and peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container text-center">
+      <h2 class="mb-6">Connect with Our Professional Team</h2>
+      <p class="max-w-2xl mx-auto mb-8">If you have any insurance-related questions or needs, feel free to contact our professional team at any time. We are dedicated to serving you.</p>
+      <a href={`/${lang}/contact`} class="btn-primary">Contact Us</a>
+    </div>
+  </section>
+</BaseLayout>

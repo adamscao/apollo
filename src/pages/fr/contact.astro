@@ -1,0 +1,217 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'fr';
+---
+
+<BaseLayout title="Contactez-nous" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">Contactez-nous</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">Nous sommes là pour vous aider avec toutes vos questions ou besoins</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Formulaire de Contact -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Envoyez un Message</h2>
+          <p class="mb-8">Veuillez remplir le formulaire ci-dessous, et nous vous recontacterons dès que possible. Vous pouvez également nous contacter directement par téléphone ou par courriel.</p>
+          
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre nom" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre numéro de téléphone" />
+              </div>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Courriel</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre adresse courriel" />
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+              <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                <option value="" selected disabled>Veuillez sélectionner un sujet</option>
+                <option value="home-insurance">Demande d'Assurance Habitation</option>
+                <option value="auto-insurance">Demande d'Assurance Auto</option>
+                <option value="business-insurance">Demande d'Assurance Commerciale</option>
+                <option value="claims">Demande de Réclamation</option>
+                <option value="other">Autre Demande</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Veuillez décrire vos besoins ou questions en détail..."></textarea>
+            </div>
+            
+            <div>
+              <button type="submit" class="btn-primary w-full md:w-auto">Envoyer le Message</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Informations de Contact -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Informations de Contact</h2>
+          
+          <div class="space-y-8">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold mb-1">Adresse</h3>
+                <p class="text-gray-700">Brossard, Québec, Canada</p>
+                <p class="text-gray-700 mt-1">Rive-Sud de Montréal</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold mb-1">Téléphone</h3>
+                <p class="text-gray-700">+1 (514) 123-4567</p>
+                <p class="text-gray-700 mt-1">Lundi au Vendredi 9h00 - 17h00</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold mb-1">Courriel</h3>
+                <a href="mailto:info@apolloinsurance.ca" class="text-primary hover:underline">info@apolloinsurance.ca</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold mb-1">Contact WeChat</h3>
+                <button id="wechatButton" class="mt-2 flex items-center text-primary hover:underline">
+                  <span>Voir le Code QR WeChat</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-1 w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                <!-- Modal de Code QR WeChat (caché par défaut) -->
+                <div id="wechatModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+                  <div class="bg-white p-6 rounded-lg max-w-sm w-full">
+                    <div class="flex justify-between items-center mb-4">
+                      <h3 class="text-lg font-semibold">Contact WeChat</h3>
+                      <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="flex flex-col items-center">
+                      <div class="w-48 h-48 bg-gray-300 flex items-center justify-center text-gray-500 mb-4">
+                        Code QR WeChat (espace réservé)
+                      </div>
+                      <p class="text-center text-sm text-gray-600">Scannez le code QR ci-dessus pour ajouter notre service client WeChat</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zone de Carte -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-6">Notre Emplacement</h2>
+        <div class="aspect-[16/9] md:aspect-[21/9] bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+          Carte (espace réservé) - Assurance Apollo, Brossard, Québec, Canada
+        </div>
+      </div>
+      
+      <!-- Heures d'Ouverture -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-6">Heures d'Ouverture</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-light p-6 rounded-lg">
+            <h3 class="text-lg font-semibold mb-4">Heures de Bureau</h3>
+            <ul class="space-y-2">
+              <li class="flex justify-between">
+                <span>Lundi au Vendredi</span>
+                <span>9h00 - 17h00</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Samedi</span>
+                <span>10h00 - 14h00</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Dimanche</span>
+                <span>Fermé</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-light p-6 rounded-lg">
+            <h3 class="text-lg font-semibold mb-4">Contact d'Urgence</h3>
+            <p class="mb-4">En cas d'urgence nécessitant des réclamations ou de l'assistance, veuillez appeler notre ligne d'urgence disponible 24h/24:</p>
+            <a href="tel:+15141234567" class="text-primary text-lg font-semibold hover:underline">+1 (514) 123-4567</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Fonctionnalité du Modal de Code QR WeChat
+    document.addEventListener('DOMContentLoaded', () => {
+      const wechatButton = document.getElementById('wechatButton');
+      const wechatModal = document.getElementById('wechatModal');
+      const closeModal = document.getElementById('closeModal');
+      
+      if (wechatButton && wechatModal && closeModal) {
+        wechatButton.addEventListener('click', () => {
+          wechatModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden'; // Empêcher le défilement en arrière-plan
+        });
+        
+        closeModal.addEventListener('click', () => {
+          wechatModal.classList.add('hidden');
+          document.body.style.overflow = ''; // Restaurer le défilement en arrière-plan
+        });
+        
+        // Fermer en cliquant à l'extérieur du modal
+        wechatModal.addEventListener('click', (e) => {
+          if (e.target === wechatModal) {
+            wechatModal.classList.add('hidden');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+  </script>
+</BaseLayout>

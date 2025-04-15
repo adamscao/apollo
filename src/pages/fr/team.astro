@@ -1,0 +1,129 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'fr';
+
+// Team members data
+const teamMembers = [
+  {
+    name: 'Ming Zhang',
+    title: 'Fondateur et PDG',
+    bio: 'Ming Zhang possède plus de 15 ans d\'expérience dans l\'industrie de l\'assurance, ayant occupé des postes de direction dans plusieurs compagnies d\'assurance réputées. Il connaît bien le marché de l\'assurance et se concentre sur la fourniture de services d\'assurance professionnels aux clients chinois.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Ting Li',
+    title: 'Directrice des Opérations',
+    bio: 'Ting Li possède une vaste expérience en assurance et service client, responsable des opérations quotidiennes de l\'entreprise et de la gestion des relations clients. Elle se consacre à l\'optimisation des processus de service et à l\'amélioration de l\'expérience client.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Qiang Wang',
+    title: 'Conseiller Principal en Assurance',
+    bio: 'Qiang Wang se spécialise dans l\'assurance habitation et commerciale avec plus de 10 ans d\'expérience dans l\'industrie. Il excelle dans l\'analyse des besoins des clients et la fourniture des solutions d\'assurance les plus adaptées.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Jing Chen',
+    title: 'Spécialiste en Assurance Auto',
+    bio: 'Jing Chen possède des connaissances professionnelles et une vaste expérience en assurance automobile, connaît bien les divers produits et politiques d\'assurance auto, et peut fournir des services de conseil et des services d\'assurance automobile professionnels.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Wei Zhao',
+    title: 'Directeur du Service Client',
+    bio: 'Wei Zhao gère l\'équipe de service client, s\'assurant que les clients reçoivent un service rapide et professionnel. Il se concentre sur les besoins des clients et s\'engage à fournir un excellent service client.',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: 'Xiaohong Lin',
+    title: 'Spécialiste des Réclamations',
+    bio: 'Xiaohong Lin se spécialise dans les services de réclamations d\'assurance avec une vaste expérience dans le traitement des réclamations. Elle peut traiter efficacement divers cas de réclamations, garantissant que les clients reçoivent une indemnisation rapide lorsqu\'ils en ont besoin.',
+    image: 'team-placeholder.jpg'
+  }
+];
+---
+
+<BaseLayout title="Notre Équipe" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">Notre Équipe</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">Notre équipe professionnelle se consacre à vous fournir des services d'assurance de la plus haute qualité</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="mb-6">Rencontrez Notre Équipe</h2>
+        <p>Assurance Apollo dispose d'une équipe professionnelle et dévouée, chaque membre ayant une vaste expérience dans l'industrie de l'assurance, engagé à fournir un service professionnel et attentif aux clients. Les membres de notre équipe maîtrisent le chinois et les langues officielles locales, capables de fournir un service dans votre langue maternelle, éliminant les barrières de communication.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {teamMembers.map((member) => (
+          <div class="bg-light rounded-lg overflow-hidden shadow-sm">
+            <div class="aspect-[4/3] bg-gray-300 flex items-center justify-center text-gray-500">
+              Photo du Membre de l'Équipe (espace réservé)
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
+              <p class="text-primary font-medium mb-3">{member.title}</p>
+              <p>{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-light">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="mb-6">Notre Engagement</h2>
+        <p>En tant que membres de l'équipe d'Assurance Apollo, nous nous engageons à fournir un service professionnel, honnête et efficace à chaque client, vous aidant à choisir les plans d'assurance les plus adaptés et à protéger vos biens et vos intérêts.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Intégrité Professionnelle</h3>
+          <p>Nous fournissons des services d'assurance transparents et fiables avec des connaissances professionnelles et de l'intégrité, construisant des relations de confiance à long terme avec les clients.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Réponse Efficace</h3>
+          <p>Nous nous engageons à répondre rapidement aux besoins des clients, en fournissant une consultation et un service rapides, garantissant que les problèmes des clients sont rapidement résolus.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Client d'Abord</h3>
+          <p>Nous plaçons toujours les besoins de nos clients en premier, fournissant des solutions d'assurance personnalisées et des expériences de service attentives, garantissant la satisfaction et la tranquillité d'esprit des clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container text-center">
+      <h2 class="mb-6">Connectez-vous avec Notre Équipe Professionnelle</h2>
+      <p class="max-w-2xl mx-auto mb-8">Si vous avez des questions ou des besoins liés à l'assurance, n'hésitez pas à contacter notre équipe professionnelle à tout moment. Nous sommes dédiés à vous servir.</p>
+      <a href={`/${lang}/contact`} class="btn-primary">Contactez-nous</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,111 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'zh';
+---
+
+<BaseLayout title="首页" lang={lang}>
+  <section class="bg-gradient-to-br from-primary to-accent text-white py-16 md:py-24">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="mb-6">阿波罗保险公司</h1>
+        <p class="text-xl md:text-2xl mb-8">为您的生活与财产提供专业的保障方案</p>
+        <div class="flex flex-wrap gap-4">
+          <a href={`/${lang}/services#home`} class="btn-secondary">房屋保险</a>
+          <a href={`/${lang}/services#auto`} class="btn-secondary">汽车保险</a>
+          <a href={`/${lang}/services#business`} class="btn-secondary">商业保险</a>
+          <a href={`/${lang}/contact`} class="btn bg-white text-primary hover:bg-opacity-90">联系我们</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <h2 class="text-center mb-12">公司简介</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="mb-4">阿波罗保险公司是AssurPV的子品牌，位于加拿大蒙特利尔南岸Brossard，专注为华人客户提供专业的保险服务。</p>
+          <p class="mb-4">我们的团队拥有丰富的行业经验，能够用您的母语为您提供周到的服务，确保您完全了解各种保险选项，并选择最适合您需求的保障方案。</p>
+          <p class="mb-6">无论您是需要房屋保险、汽车保险还是商业保险，我们都能为您提供量身定制的解决方案，让您的生活和财产得到全面保障。</p>
+          <a href={`/${lang}/about`} class="btn-primary">了解更多</a>
+        </div>
+        <div class="bg-light p-12 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            公司简介图片占位
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">我们的服务</h2>
+      <p class="text-center mb-12 max-w-3xl mx-auto">我们提供全面的保险解决方案，保护您的家庭、车辆和企业。</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- 房屋保险 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            房屋保险图片占位
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">房屋保险</h3>
+            <p class="mb-4">保护您的家庭和财产不受自然灾害、火灾、盗窃等风险的影响。</p>
+            <a href={`/${lang}/services#home`} class="text-primary font-medium hover:underline inline-flex items-center">
+              了解详情
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 汽车保险 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            汽车保险图片占位
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">汽车保险</h3>
+            <p class="mb-4">提供全面的汽车保障，保护您免受事故、盗窃和自然灾害造成的损失。</p>
+            <a href={`/${lang}/services#auto`} class="text-primary font-medium hover:underline inline-flex items-center">
+              了解详情
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 商业保险 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            商业保险图片占位
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">商业保险</h3>
+            <p class="mb-4">为您的企业提供全面保障，包括财产、责任、业务中断等多种保险方案。</p>
+            <a href={`/${lang}/services#business`} class="text-primary font-medium hover:underline inline-flex items-center">
+              了解详情
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container text-center">
+      <h2 class="mb-6">联系我们获取免费咨询</h2>
+      <p class="max-w-2xl mx-auto mb-8">不确定哪种保险最适合您？我们的专业顾问随时为您提供帮助，解答您的疑问，并为您制定最合适的保险方案。</p>
+      <a href={`/${lang}/contact`} class="btn-primary">立即联系</a>
+    </div>
+  </section>
+</BaseLayout>

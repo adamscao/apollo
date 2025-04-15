@@ -1,0 +1,195 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'en';
+
+// FAQ items grouped by category
+const faqGroups = [
+  {
+    title: "General Questions",
+    items: [
+      {
+        question: "What insurance products does Apollo Insurance offer?",
+        answer: "We primarily offer three types of insurance products: home insurance, auto insurance, and business insurance. Each type of insurance has different coverage options and can be customized according to your specific needs."
+      },
+      {
+        question: "How can I get an insurance quote?",
+        answer: "You can get an insurance quote through multiple channels: call our customer service hotline, send an email, submit a request through our website contact form, or visit our office in Brossard directly. Our professional advisors will provide you with detailed insurance quotes based on the information you provide."
+      },
+      {
+        question: "How do I pay for insurance?",
+        answer: "We accept various payment methods, including credit cards, debit cards, electronic transfers, and checks. You can choose to pay the annual premium in one lump sum or opt for monthly installments. The specific payment method can be discussed with our advisors when purchasing insurance."
+      },
+      {
+        question: "Can I change my insurance coverage at any time?",
+        answer: "Yes, you can contact us to change your insurance coverage at any time during the policy term. Depending on the changes, your premium may be adjusted accordingly. We recommend that you notify us promptly when significant changes occur in your circumstances (such as moving, purchasing a new car, or home renovations) to ensure your insurance coverage remains effective and adequate."
+      }
+    ]
+  },
+  {
+    title: "Home Insurance Questions",
+    items: [
+      {
+        question: "What does home insurance cover?",
+        answer: "Our home insurance typically includes coverage for home structure damage, personal property, third-party liability, temporary accommodation expenses, and protection against natural disasters such as floods, fires, and storms. The specific coverage will vary depending on the insurance plan you choose."
+      },
+      {
+        question: "Does my home insurance cover basement seepage?",
+        answer: "This depends on the cause of the seepage and your specific insurance plan. Generally, water damage caused by sudden pipe bursts is usually covered, while damage caused by long-term poor maintenance or groundwater seepage may not be covered. We recommend checking the specific terms of your insurance contract or consulting our insurance advisors directly."
+      },
+      {
+        question: "What type of insurance do I need if I rent my property to others?",
+        answer: "If you rent your property to others, you need to purchase landlord insurance rather than standard homeowner's insurance. Landlord insurance provides coverage for the building structure, certain fixtures, and liability, but typically does not include the tenant's personal property. We recommend that your tenants purchase tenant insurance to protect their personal property."
+      },
+      {
+        question: "Does home insurance cover valuable items like jewelry or artwork?",
+        answer: "Standard home insurance typically has coverage limits for valuable items. If you own high-value jewelry, artwork, collections, or other valuable items, we recommend purchasing additional insurance riders or separate valuable items insurance to ensure they are adequately protected."
+      }
+    ]
+  },
+  {
+    title: "Auto Insurance Questions",
+    items: [
+      {
+        question: "What does auto insurance cover?",
+        answer: "Our auto insurance typically includes coverage for vehicle collision damage, third-party liability, vehicle theft, personal injury, and emergency roadside assistance. You can choose different levels of coverage based on your needs."
+      },
+      {
+        question: "Does my auto insurance apply when others drive my vehicle?",
+        answer: "Generally, your auto insurance will cover other drivers who drive your vehicle with your permission. However, the coverage may be affected by the driver's driving history and your specific insurance policy. We recommend checking your insurance policy details before allowing others to drive your vehicle."
+      },
+      {
+        question: "How can I reduce my auto insurance costs?",
+        answer: "Ways to reduce auto insurance costs include: increasing the deductible, maintaining a good driving record, combining multiple insurance policies for discounts, installing anti-theft devices, taking defensive driving courses, etc. Our insurance advisors can provide more suggestions to help you save on insurance costs based on your specific situation."
+      },
+      {
+        question: "I've purchased a new car. How do I update my auto insurance?",
+        answer: "After purchasing a new car, you should contact us immediately to update your auto insurance. You will need to provide information about the new car, including make, model, year, vehicle identification number (VIN), etc. Your insurance costs and coverage may need to be adjusted based on the value and characteristics of the new car."
+      }
+    ]
+  },
+  {
+    title: "Business Insurance Questions",
+    items: [
+      {
+        question: "What types of businesses need commercial insurance?",
+        answer: "Almost all types of businesses need some form of commercial insurance. Whether it's a small retail store, restaurant, office, or manufacturing company, they all face various risks including property loss, liability claims, business interruption, etc. We offer various types of commercial insurance that can be customized according to your business's specific needs."
+      },
+      {
+        question: "What is the difference between business insurance and personal insurance?",
+        answer: "Business insurance is designed specifically for businesses, with coverage including commercial property, commercial liability, business interruption, employee compensation, and other business-specific risks. Personal insurance primarily provides coverage for personal property (such as homes, cars) and personal liability. Business insurance typically offers higher coverage limits to address the potentially larger risks businesses may face."
+      },
+      {
+        question: "What basic commercial insurance does my small business need?",
+        answer: "For most small businesses, basic commercial insurance includes: commercial property insurance (protecting business premises and equipment), commercial liability insurance (protecting the business from third-party damage claims), and business interruption insurance (providing income support during business suspension). Depending on your industry and specific business operations, you may need other specialized types of insurance."
+      },
+      {
+        question: "What does business interruption insurance include?",
+        answer: "Business interruption insurance provides financial support when your business is temporarily unable to operate due to covered events (such as fire, natural disasters, etc.). It typically covers profit loss, fixed operating costs (such as rent, wages), temporary relocation expenses, etc. This type of insurance helps businesses maintain financial stability during difficult times until normal operations resume."
+      }
+    ]
+  },
+  {
+    title: "Claims Related Questions",
+    items: [
+      {
+        question: "How do I submit an insurance claim?",
+        answer: "After an insurance incident occurs, please immediately contact our customer service team to report the situation. We will guide you through the claims process, including completing necessary forms and submitting relevant documents. You can submit your claim application by phone, email, or in person at our office."
+      },
+      {
+        question: "How long does the claims process take?",
+        answer: "The claims processing time depends on the complexity of the claim and the completeness of the required documents. Simple claims may be processed within a few days, while complex claims may take longer. We are committed to processing each claim as quickly as possible and maintaining communication with you throughout the process."
+      },
+      {
+        question: "What can I do if my claim is denied?",
+        answer: "If your claim is denied, we will explain the reason for the denial. If you disagree with this decision, you can request a review and provide additional information or documents to support your claim. We are committed to handling each claim fairly and are willing to work with you to resolve any disputes."
+      },
+      {
+        question: "How do I stay in touch with the insurance company after submitting a claim?",
+        answer: "After submitting a claim, you will receive a claim number and contact information for the claims specialist handling your claim. You can use this information to inquire about the progress of your claim at any time. Our claims team will also regularly update you on the status of your claim, ensuring you are aware of each step of progress."
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title="Frequently Asked Questions" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">Frequently Asked Questions</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">Find answers to your insurance questions</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <!-- FAQ Directory Navigation -->
+      <div class="mb-12">
+        <h2 class="text-center mb-8">Question Categories</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          {faqGroups.map((group, index) => (
+            <a href={`#section-${index}`} class="px-4 py-2 bg-light rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+              {group.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ Content -->
+      {faqGroups.map((group, groupIndex) => (
+        <div id={`section-${groupIndex}`} class="mb-16 last:mb-0 scroll-mt-24">
+          <h2 class="text-2xl font-bold mb-6 border-b pb-2">{group.title}</h2>
+          <div class="space-y-6">
+            {group.items.map((item, itemIndex) => (
+              <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <details class="group">
+                  <summary class="flex justify-between items-center cursor-pointer p-6 bg-light">
+                    <h3 class="text-lg font-semibold">{item.question}</h3>
+                    <span class="text-primary transform group-open:rotate-180 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div class="p-6 pt-0">
+                    <p>{item.answer}</p>
+                  </div>
+                </details>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- Unanswered Questions -->
+      <div class="bg-light p-8 rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-4">Didn't Find Your Question?</h2>
+        <p class="mb-6">If you have other questions or need more detailed answers, please feel free to contact our customer service team.</p>
+        <a href={`/${lang}/contact`} class="btn-primary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Handle FAQ accordion effect
+    document.addEventListener('DOMContentLoaded', () => {
+      // Smooth scroll to anchors
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

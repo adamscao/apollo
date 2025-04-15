@@ -1,0 +1,195 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'fr';
+
+// FAQ items grouped by category
+const faqGroups = [
+  {
+    title: "Questions Générales",
+    items: [
+      {
+        question: "Quels produits d'assurance Assurance Apollo offre-t-elle?",
+        answer: "Nous offrons principalement trois types de produits d'assurance: assurance habitation, assurance auto et assurance commerciale. Chaque type d'assurance a différentes options de couverture et peut être personnalisé selon vos besoins spécifiques."
+      },
+      {
+        question: "Comment puis-je obtenir une soumission d'assurance?",
+        answer: "Vous pouvez obtenir une soumission d'assurance via plusieurs canaux: appeler notre ligne d'assistance client, envoyer un courriel, soumettre une demande via le formulaire de contact de notre site web, ou visiter directement notre bureau à Brossard. Nos conseillers professionnels vous fourniront des soumissions d'assurance détaillées basées sur les informations que vous fournissez."
+      },
+      {
+        question: "Comment puis-je payer mon assurance?",
+        answer: "Nous acceptons divers modes de paiement, y compris les cartes de crédit, les cartes de débit, les virements électroniques et les chèques. Vous pouvez choisir de payer la prime annuelle en un seul versement ou opter pour des versements mensuels. La méthode de paiement spécifique peut être discutée avec nos conseillers lors de l'achat de l'assurance."
+      },
+      {
+        question: "Puis-je modifier ma couverture d'assurance à tout moment?",
+        answer: "Oui, vous pouvez nous contacter pour modifier votre couverture d'assurance à tout moment pendant la durée du contrat. Selon les modifications, votre prime pourrait être ajustée en conséquence. Nous vous recommandons de nous informer rapidement lorsque des changements importants surviennent dans votre situation (comme un déménagement, l'achat d'une nouvelle voiture ou des rénovations domiciliaires) pour vous assurer que votre couverture d'assurance reste efficace et adéquate."
+      }
+    ]
+  },
+  {
+    title: "Questions sur l'Assurance Habitation",
+    items: [
+      {
+        question: "Que couvre l'assurance habitation?",
+        answer: "Notre assurance habitation comprend généralement la couverture des dommages à la structure de la maison, des biens personnels, de la responsabilité civile, des frais d'hébergement temporaire, et la protection contre les catastrophes naturelles comme les inondations, les incendies et les tempêtes. La couverture spécifique variera selon le plan d'assurance que vous choisissez."
+      },
+      {
+        question: "Mon assurance habitation couvre-t-elle les infiltrations dans le sous-sol?",
+        answer: "Cela dépend de la cause de l'infiltration et de votre plan d'assurance spécifique. Généralement, les dégâts d'eau causés par des ruptures soudaines de tuyaux sont habituellement couverts, tandis que les dommages causés par un entretien inadéquat à long terme ou des infiltrations d'eau souterraine peuvent ne pas être couverts. Nous vous recommandons de vérifier les termes spécifiques de votre contrat d'assurance ou de consulter directement nos conseillers en assurance."
+      },
+      {
+        question: "Quel type d'assurance me faut-il si je loue ma propriété à d'autres personnes?",
+        answer: "Si vous louez votre propriété à d'autres personnes, vous devez souscrire une assurance propriétaire bailleur plutôt qu'une assurance habitation standard. L'assurance propriétaire bailleur offre une couverture pour la structure du bâtiment, certains équipements fixes et la responsabilité civile, mais n'inclut généralement pas les biens personnels du locataire. Nous recommandons à vos locataires de souscrire une assurance locataire pour protéger leurs biens personnels."
+      },
+      {
+        question: "L'assurance habitation couvre-t-elle les objets de valeur comme les bijoux ou les œuvres d'art?",
+        answer: "L'assurance habitation standard a généralement des limites de couverture pour les objets de valeur. Si vous possédez des bijoux de grande valeur, des œuvres d'art, des collections ou d'autres objets précieux, nous vous recommandons de souscrire des avenants d'assurance supplémentaires ou une assurance séparée pour les objets de valeur afin de vous assurer qu'ils sont adéquatement protégés."
+      }
+    ]
+  },
+  {
+    title: "Questions sur l'Assurance Auto",
+    items: [
+      {
+        question: "Que couvre l'assurance auto?",
+        answer: "Notre assurance auto comprend généralement la couverture des dommages par collision au véhicule, la responsabilité civile, le vol du véhicule, les blessures corporelles et l'assistance routière d'urgence. Vous pouvez choisir différents niveaux de couverture selon vos besoins."
+      },
+      {
+        question: "Mon assurance auto s'applique-t-elle lorsque d'autres personnes conduisent mon véhicule?",
+        answer: "Généralement, votre assurance auto couvrira les autres conducteurs qui conduisent votre véhicule avec votre permission. Cependant, la couverture peut être affectée par l'historique de conduite du conducteur et votre police d'assurance spécifique. Nous vous recommandons de vérifier les détails de votre police d'assurance avant de permettre à d'autres personnes de conduire votre véhicule."
+      },
+      {
+        question: "Comment puis-je réduire mes coûts d'assurance auto?",
+        answer: "Les moyens de réduire les coûts d'assurance auto comprennent: augmenter la franchise, maintenir un bon dossier de conduite, combiner plusieurs polices d'assurance pour des rabais, installer des dispositifs antivol, suivre des cours de conduite défensive, etc. Nos conseillers en assurance peuvent vous fournir plus de suggestions pour vous aider à économiser sur les coûts d'assurance en fonction de votre situation spécifique."
+      },
+      {
+        question: "J'ai acheté une nouvelle voiture. Comment dois-je mettre à jour mon assurance auto?",
+        answer: "Après avoir acheté une nouvelle voiture, vous devriez nous contacter immédiatement pour mettre à jour votre assurance auto. Vous devrez fournir des informations sur la nouvelle voiture, y compris la marque, le modèle, l'année, le numéro d'identification du véhicule (NIV), etc. Vos coûts d'assurance et votre couverture pourraient devoir être ajustés en fonction de la valeur et des caractéristiques de la nouvelle voiture."
+      }
+    ]
+  },
+  {
+    title: "Questions sur l'Assurance Commerciale",
+    items: [
+      {
+        question: "Quels types d'entreprises ont besoin d'une assurance commerciale?",
+        answer: "Presque tous les types d'entreprises ont besoin d'une forme d'assurance commerciale. Qu'il s'agisse d'un petit commerce de détail, d'un restaurant, d'un bureau ou d'une entreprise manufacturière, tous font face à divers risques, notamment la perte de biens, les réclamations de responsabilité, l'interruption des activités, etc. Nous offrons divers types d'assurance commerciale qui peuvent être personnalisés selon les besoins spécifiques de votre entreprise."
+      },
+      {
+        question: "Quelle est la différence entre l'assurance commerciale et l'assurance personnelle?",
+        answer: "L'assurance commerciale est conçue spécifiquement pour les entreprises, avec une couverture incluant les biens commerciaux, la responsabilité commerciale, l'interruption des activités, l'indemnisation des employés et d'autres risques spécifiques aux entreprises. L'assurance personnelle fournit principalement une couverture pour les biens personnels (comme les maisons, les voitures) et la responsabilité personnelle. L'assurance commerciale offre généralement des limites de couverture plus élevées pour faire face aux risques potentiellement plus importants auxquels les entreprises peuvent être confrontées."
+      },
+      {
+        question: "Quelle assurance commerciale de base ma petite entreprise a-t-elle besoin?",
+        answer: "Pour la plupart des petites entreprises, l'assurance commerciale de base comprend: l'assurance des biens commerciaux (protégeant les locaux et l'équipement de l'entreprise), l'assurance responsabilité civile commerciale (protégeant l'entreprise contre les réclamations de dommages de tiers), et l'assurance interruption des activités (fournissant un soutien de revenu pendant la suspension des activités). Selon votre industrie et vos opérations commerciales spécifiques, vous pourriez avoir besoin d'autres types d'assurance spécialisés."
+      },
+      {
+        question: "Que comprend l'assurance interruption des activités?",
+        answer: "L'assurance interruption des activités fournit un soutien financier lorsque votre entreprise est temporairement incapable de fonctionner en raison d'événements couverts (comme un incendie, des catastrophes naturelles, etc.). Elle couvre généralement la perte de profits, les coûts d'exploitation fixes (comme le loyer, les salaires), les frais de relocalisation temporaire, etc. Ce type d'assurance aide les entreprises à maintenir la stabilité financière pendant les périodes difficiles, jusqu'à ce que les opérations normales reprennent."
+      }
+    ]
+  },
+  {
+    title: "Questions liées aux Réclamations",
+    items: [
+      {
+        question: "Comment soumettre une réclamation d'assurance?",
+        answer: "Après un incident d'assurance, veuillez immédiatement contacter notre équipe de service client pour signaler la situation. Nous vous guiderons à travers le processus de réclamation, y compris la complétion des formulaires nécessaires et la soumission des documents pertinents. Vous pouvez soumettre votre demande de réclamation par téléphone, courriel ou en personne à notre bureau."
+      },
+      {
+        question: "Combien de temps dure le processus de réclamation?",
+        answer: "Le temps de traitement des réclamations dépend de la complexité de la réclamation et de l'exhaustivité des documents requis. Les réclamations simples peuvent être traitées en quelques jours, tandis que les réclamations complexes peuvent prendre plus de temps. Nous nous engageons à traiter chaque réclamation aussi rapidement que possible et à maintenir la communication avec vous tout au long du processus."
+      },
+      {
+        question: "Que puis-je faire si ma réclamation est refusée?",
+        answer: "Si votre réclamation est refusée, nous expliquerons la raison du refus. Si vous n'êtes pas d'accord avec cette décision, vous pouvez demander une révision et fournir des informations ou documents supplémentaires pour soutenir votre réclamation. Nous nous engageons à traiter chaque réclamation équitablement et sommes prêts à travailler avec vous pour résoudre tout litige."
+      },
+      {
+        question: "Comment rester en contact avec la compagnie d'assurance après avoir soumis une réclamation?",
+        answer: "Après avoir soumis une réclamation, vous recevrez un numéro de réclamation et les coordonnées du spécialiste des réclamations chargé de votre dossier. Vous pouvez utiliser ces informations pour vous renseigner sur l'avancement de votre réclamation à tout moment. Notre équipe de réclamations vous tiendra également régulièrement informé de l'état de votre réclamation, vous assurant d'être au courant de chaque étape du progrès."
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title="Foire Aux Questions" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">Foire Aux Questions</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">Trouvez des réponses à vos questions sur l'assurance</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <!-- Navigation par catégories de FAQ -->
+      <div class="mb-12">
+        <h2 class="text-center mb-8">Catégories de Questions</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          {faqGroups.map((group, index) => (
+            <a href={`#section-${index}`} class="px-4 py-2 bg-light rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+              {group.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Contenu FAQ -->
+      {faqGroups.map((group, groupIndex) => (
+        <div id={`section-${groupIndex}`} class="mb-16 last:mb-0 scroll-mt-24">
+          <h2 class="text-2xl font-bold mb-6 border-b pb-2">{group.title}</h2>
+          <div class="space-y-6">
+            {group.items.map((item, itemIndex) => (
+              <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <details class="group">
+                  <summary class="flex justify-between items-center cursor-pointer p-6 bg-light">
+                    <h3 class="text-lg font-semibold">{item.question}</h3>
+                    <span class="text-primary transform group-open:rotate-180 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div class="p-6 pt-0">
+                    <p>{item.answer}</p>
+                  </div>
+                </details>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- Questions sans réponse -->
+      <div class="bg-light p-8 rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-4">Vous n'avez pas trouvé votre question?</h2>
+        <p class="mb-6">Si vous avez d'autres questions ou besoin de réponses plus détaillées, n'hésitez pas à contacter notre équipe de service client.</p>
+        <a href={`/${lang}/contact`} class="btn-primary">Contactez-nous</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Gestion de l'effet accordéon pour la FAQ
+    document.addEventListener('DOMContentLoaded', () => {
+      // Défilement fluide vers les ancrages
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

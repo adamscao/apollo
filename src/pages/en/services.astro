@@ -1,0 +1,186 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'en';
+---
+
+<BaseLayout title="Our Services" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">Our Services</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">Apollo Insurance offers comprehensive insurance solutions to meet your various insurance needs</p>
+    </div>
+  </section>
+
+  <!-- Home Insurance -->
+  <section id="home" class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h2 class="mb-6">Home Insurance</h2>
+          <p class="mb-4">Our home insurance plans provide comprehensive protection for your residence, guarding against various risks so you can enjoy your family life with peace of mind.</p>
+          
+          <h3 class="text-xl font-semibold mb-3 mt-6">Coverage</h3>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Home structure damage protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Personal property protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Third-party liability protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Temporary accommodation expense coverage</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Protection against natural disasters like flood, fire, and storm</span>
+            </li>
+          </ul>
+          
+          <a href={`/${lang}/contact`} class="btn-primary">Contact Us for Details</a>
+        </div>
+        <div class="order-1 md:order-2 bg-light p-8 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            Home Insurance Image Placeholder
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auto Insurance -->
+  <section id="auto" class="py-16 bg-light">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="bg-white p-8 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            Auto Insurance Image Placeholder
+          </div>
+        </div>
+        <div>
+          <h2 class="mb-6">Auto Insurance</h2>
+          <p class="mb-4">Our auto insurance plans provide comprehensive protection, allowing you to drive with peace of mind and travel worry-free.</p>
+          
+          <h3 class="text-xl font-semibold mb-3 mt-6">Coverage</h3>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Vehicle collision damage coverage</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Third-party liability coverage</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Vehicle theft protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Personal injury protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Emergency roadside assistance</span>
+            </li>
+          </ul>
+          
+          <a href={`/${lang}/contact`} class="btn-primary">Contact Us for Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Insurance -->
+  <section id="business" class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h2 class="mb-6">Business Insurance</h2>
+          <p class="mb-4">Our business insurance plans provide comprehensive protection for your business, allowing you to focus on business development without worry.</p>
+          
+          <h3 class="text-xl font-semibold mb-3 mt-6">Coverage</h3>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Commercial property protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Commercial liability protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Business interruption protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Employee liability protection</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Product liability protection</span>
+            </li>
+          </ul>
+          
+          <a href={`/${lang}/contact`} class="btn-primary">Contact Us for Details</a>
+        </div>
+        <div class="order-1 md:order-2 bg-light p-8 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            Business Insurance Image Placeholder
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-6">Customize Your Insurance Plan</h2>
+      <p class="max-w-2xl mx-auto mb-8">We offer personalized insurance solutions tailored to your specific needs and budget to create the most suitable insurance plan for you.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href={`/${lang}/contact`} class="btn bg-white text-primary hover:bg-opacity-90">Contact Us</a>
+        <a href={`/${lang}/claims`} class="btn border border-white text-white hover:bg-white hover:text-primary">Claims Process</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

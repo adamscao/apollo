@@ -1,0 +1,111 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'fr';
+---
+
+<BaseLayout title="Accueil" lang={lang}>
+  <section class="bg-gradient-to-br from-primary to-accent text-white py-16 md:py-24">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="mb-6">Assurance Apollo</h1>
+        <p class="text-xl md:text-2xl mb-8">Protection professionnelle pour votre vie et vos biens</p>
+        <div class="flex flex-wrap gap-4">
+          <a href={`/${lang}/services#home`} class="btn-secondary">Assurance Habitation</a>
+          <a href={`/${lang}/services#auto`} class="btn-secondary">Assurance Auto</a>
+          <a href={`/${lang}/services#business`} class="btn-secondary">Assurance Commerciale</a>
+          <a href={`/${lang}/contact`} class="btn bg-white text-primary hover:bg-opacity-90">Contactez-nous</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <h2 class="text-center mb-12">À Propos de Nous</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="mb-4">Assurance Apollo est une sous-marque d'AssurPV, située à Brossard sur la Rive-Sud de Montréal, spécialisée dans les services d'assurance pour la clientèle chinoise.</p>
+          <p class="mb-4">Notre équipe possède une vaste expérience dans l'industrie et peut vous fournir un service attentif dans votre langue maternelle, vous assurant de comprendre pleinement toutes les options d'assurance et de choisir le plan de protection qui convient le mieux à vos besoins.</p>
+          <p class="mb-6">Que vous ayez besoin d'une assurance habitation, auto ou commerciale, nous pouvons vous fournir des solutions personnalisées pour protéger pleinement votre vie et vos biens.</p>
+          <a href={`/${lang}/about`} class="btn-primary">En Savoir Plus</a>
+        </div>
+        <div class="bg-light p-12 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            Image de l'entreprise (espace réservé)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Nos Services</h2>
+      <p class="text-center mb-12 max-w-3xl mx-auto">Nous offrons des solutions d'assurance complètes pour protéger votre maison, votre véhicule et votre entreprise.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Assurance Habitation -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            Image d'assurance habitation (espace réservé)
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">Assurance Habitation</h3>
+            <p class="mb-4">Protégez votre maison et vos biens contre les risques tels que les catastrophes naturelles, les incendies, les vols, et plus encore.</p>
+            <a href={`/${lang}/services#home`} class="text-primary font-medium hover:underline inline-flex items-center">
+              En Savoir Plus
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Assurance Auto -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            Image d'assurance auto (espace réservé)
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">Assurance Auto</h3>
+            <p class="mb-4">Offrez une protection complète à votre véhicule contre les accidents, les vols et les catastrophes naturelles.</p>
+            <a href={`/${lang}/services#auto`} class="text-primary font-medium hover:underline inline-flex items-center">
+              En Savoir Plus
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Assurance Commerciale -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            Image d'assurance commerciale (espace réservé)
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">Assurance Commerciale</h3>
+            <p class="mb-4">Protection complète pour votre entreprise, incluant les biens, la responsabilité, l'interruption des activités, et plus encore.</p>
+            <a href={`/${lang}/services#business`} class="text-primary font-medium hover:underline inline-flex items-center">
+              En Savoir Plus
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container text-center">
+      <h2 class="mb-6">Contactez-nous pour une Consultation Gratuite</h2>
+      <p class="max-w-2xl mx-auto mb-8">Vous ne savez pas quelle assurance vous convient le mieux? Nos conseillers professionnels sont disponibles pour répondre à vos questions et créer le plan d'assurance le plus adapté à vos besoins.</p>
+      <a href={`/${lang}/contact`} class="btn-primary">Contactez-nous Maintenant</a>
+    </div>
+  </section>
+</BaseLayout>

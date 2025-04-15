@@ -1,0 +1,186 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'zh';
+---
+
+<BaseLayout title="服务介绍" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">服务介绍</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">阿波罗保险公司提供全面的保险解决方案，满足您的各种保险需求</p>
+    </div>
+  </section>
+
+  <!-- 房屋保险 -->
+  <section id="home" class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h2 class="mb-6">房屋保险</h2>
+          <p class="mb-4">我们的房屋保险方案为您的住宅提供全面保障，防范各种风险，让您安心享受家庭生活。</p>
+          
+          <h3 class="text-xl font-semibold mb-3 mt-6">保障范围</h3>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>房屋结构损坏保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>个人财产保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>第三方责任保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>临时住宿费用保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>水灾、火灾、风暴等自然灾害保障</span>
+            </li>
+          </ul>
+          
+          <a href={`/${lang}/contact`} class="btn-primary">联系咨询详情</a>
+        </div>
+        <div class="order-1 md:order-2 bg-light p-8 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            房屋保险图片占位
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 汽车保险 -->
+  <section id="auto" class="py-16 bg-light">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="bg-white p-8 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            汽车保险图片占位
+          </div>
+        </div>
+        <div>
+          <h2 class="mb-6">汽车保险</h2>
+          <p class="mb-4">我们的汽车保险方案提供全面的保障，让您安心驾驶，无忧出行。</p>
+          
+          <h3 class="text-xl font-semibold mb-3 mt-6">保障范围</h3>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>车辆碰撞损坏保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>第三方责任保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>车辆盗窃保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>人身伤害保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>紧急道路救援服务</span>
+            </li>
+          </ul>
+          
+          <a href={`/${lang}/contact`} class="btn-primary">联系咨询详情</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 商业保险 -->
+  <section id="business" class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h2 class="mb-6">商业保险</h2>
+          <p class="mb-4">我们的商业保险方案为您的企业提供全面保障，让您专注业务发展，无后顾之忧。</p>
+          
+          <h3 class="text-xl font-semibold mb-3 mt-6">保障范围</h3>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>商业财产保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>商业责任保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>业务中断保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>员工责任保障</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-primary mr-2 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>产品责任保障</span>
+            </li>
+          </ul>
+          
+          <a href={`/${lang}/contact`} class="btn-primary">联系咨询详情</a>
+        </div>
+        <div class="order-1 md:order-2 bg-light p-8 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            商业保险图片占位
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-6">定制您的保险方案</h2>
+      <p class="max-w-2xl mx-auto mb-8">我们提供个性化的保险解决方案，根据您的具体需求和预算，为您量身定制最合适的保险方案。</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href={`/${lang}/contact`} class="btn bg-white text-primary hover:bg-opacity-90">联系我们</a>
+        <a href={`/${lang}/claims`} class="btn border border-white text-white hover:bg-white hover:text-primary">了解报险流程</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,129 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'zh';
+
+// Team members data
+const teamMembers = [
+  {
+    name: '张明',
+    title: '创始人兼首席执行官',
+    bio: '张明拥有超过15年的保险行业经验，曾在多家知名保险公司担任高管职位。他精通保险市场，专注于为华人客户提供专业的保险服务。',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: '李婷',
+    title: '首席运营官',
+    bio: '李婷拥有丰富的保险和客户服务经验，负责公司的日常运营和客户关系管理。她致力于优化服务流程，提升客户体验。',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: '王强',
+    title: '高级保险顾问',
+    bio: '王强专注于房屋和商业保险领域，拥有10年以上的行业经验。他善于分析客户需求，为客户提供最适合的保险方案。',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: '陈静',
+    title: '汽车保险专家',
+    bio: '陈静在汽车保险领域拥有专业知识和丰富经验，熟悉各类汽车保险产品和政策，能够为客户提供专业的汽车保险咨询和服务。',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: '赵伟',
+    title: '客户服务主管',
+    bio: '赵伟负责客户服务团队的管理工作，确保客户获得及时、专业的服务体验。他关注客户需求，致力于提供卓越的客户服务。',
+    image: 'team-placeholder.jpg'
+  },
+  {
+    name: '林小红',
+    title: '理赔专员',
+    bio: '林小红专注于保险理赔服务，拥有丰富的理赔处理经验。她能够高效处理各类理赔案件，确保客户在需要时获得及时的赔付。',
+    image: 'team-placeholder.jpg'
+  }
+];
+---
+
+<BaseLayout title="团队介绍" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">团队介绍</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">我们的专业团队致力于为您提供最优质的保险服务</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="mb-6">认识我们的团队</h2>
+        <p>阿波罗保险公司拥有一支专业、敬业的团队，每位成员都拥有丰富的保险行业经验，致力于为客户提供专业、贴心的服务。我们的团队成员精通中文和当地官方语言，能够为您提供母语服务，消除沟通障碍。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {teamMembers.map((member) => (
+          <div class="bg-light rounded-lg overflow-hidden shadow-sm">
+            <div class="aspect-[4/3] bg-gray-300 flex items-center justify-center text-gray-500">
+              团队成员照片占位
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
+              <p class="text-primary font-medium mb-3">{member.title}</p>
+              <p>{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-light">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="mb-6">我们的承诺</h2>
+        <p>作为阿波罗保险公司的团队成员，我们承诺为每位客户提供专业、诚信、高效的服务，帮助您选择最适合的保险方案，保护您的财产和利益。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">专业诚信</h3>
+          <p>我们以专业知识和诚信态度，为客户提供透明、可靠的保险服务，建立长期互信关系。</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">高效响应</h3>
+          <p>我们承诺快速响应客户需求，提供及时的咨询和服务，确保客户的问题得到迅速解决。</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">客户至上</h3>
+          <p>我们始终将客户的需求放在首位，提供个性化的保险方案和贴心的服务体验，让客户感到满意和安心。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container text-center">
+      <h2 class="mb-6">与我们的专业团队沟通</h2>
+      <p class="max-w-2xl mx-auto mb-8">如果您有任何保险相关的问题或需求，欢迎随时联系我们的专业团队，我们将竭诚为您服务。</p>
+      <a href={`/${lang}/contact`} class="btn-primary">联系我们</a>
+    </div>
+  </section>
+</BaseLayout>

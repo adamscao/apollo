@@ -1,0 +1,195 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'zh';
+
+// FAQ items grouped by category
+const faqGroups = [
+  {
+    title: "一般问题",
+    items: [
+      {
+        question: "阿波罗保险公司提供哪些保险产品？",
+        answer: "我们主要提供三类保险产品：房屋保险、汽车保险和商业保险。每类保险都有不同的保障范围和选项，可以根据您的具体需求进行定制。"
+      },
+      {
+        question: "如何获取保险报价？",
+        answer: "您可以通过多种方式获取保险报价：致电我们的客服热线、发送电子邮件、通过网站联系表单提交需求，或直接到我们位于Brossard的办公室咨询。我们的专业顾问将根据您提供的信息，为您提供详细的保险报价。"
+      },
+      {
+        question: "保险费用如何支付？",
+        answer: "我们接受多种支付方式，包括信用卡、借记卡、电子转账和支票。您可以选择一次性支付全年保费，也可以选择按月分期付款。具体付款方式可以在购买保险时与我们的顾问商议。"
+      },
+      {
+        question: "我可以随时变更我的保险内容吗？",
+        answer: "是的，您可以在保险期限内随时联系我们变更保险内容。根据变更内容的不同，您的保费可能会相应调整。我们建议您在生活状况发生重大变化时（如搬家、购置新车或房屋装修等），及时通知我们，以确保您的保险保障持续有效且充分。"
+      }
+    ]
+  },
+  {
+    title: "房屋保险问题",
+    items: [
+      {
+        question: "房屋保险包括哪些保障？",
+        answer: "我们的房屋保险通常包括房屋结构损坏保障、个人财产保障、第三方责任保障、临时住宿费用保障，以及对水灾、火灾、风暴等自然灾害的保障。具体保障范围会根据您选择的保险计划而有所不同。"
+      },
+      {
+        question: "我的房屋保险是否涵盖地下室渗水？",
+        answer: "这取决于渗水的原因和您的具体保险计划。一般来说，由突发管道破裂导致的水损通常在保障范围内，而由于长期维护不当或地下水渗透引起的损坏可能不被保障。建议您查看保险合同的具体条款，或直接咨询我们的保险顾问。"
+      },
+      {
+        question: "如果房屋出租给他人，我需要什么类型的保险？",
+        answer: "如果您将房屋出租给他人，您需要购买房东保险（Landlord Insurance），而不是标准的房主保险。房东保险提供对房屋结构、某些固定设施以及责任的保障，但通常不包括租户的个人财产。我们建议您的租户购买租户保险，以保障他们的个人财产。"
+      },
+      {
+        question: "房屋保险是否涵盖贵重物品如珠宝或艺术品？",
+        answer: "标准房屋保险对贵重物品通常有保障限额。如果您拥有高价值的珠宝、艺术品、收藏品或其他贵重物品，建议购买额外的保险附加条款或单独的贵重物品保险，以确保它们得到充分保障。"
+      }
+    ]
+  },
+  {
+    title: "汽车保险问题",
+    items: [
+      {
+        question: "汽车保险包括哪些保障？",
+        answer: "我们的汽车保险通常包括车辆碰撞损坏保障、第三方责任保障、车辆盗窃保障、人身伤害保障以及紧急道路救援服务。您可以根据需求选择不同级别的保障范围。"
+      },
+      {
+        question: "我的汽车保险是否适用于其他人驾驶我的车辆？",
+        answer: "一般来说，您的汽车保险会涵盖经您允许驾驶您车辆的其他驾驶员。但是，保险保障可能会受到驾驶员驾驶历史和您的具体保险政策的影响。建议在允许他人驾驶您的车辆前，先确认您的保险政策细则。"
+      },
+      {
+        question: "如何降低我的汽车保险费用？",
+        answer: "降低汽车保险费用的方法包括：提高免赔额、保持良好的驾驶记录、多种保险合并购买以获得折扣、安装防盗设备、参加防御性驾驶课程等。我们的保险顾问可以根据您的具体情况，为您提供更多节省保险费用的建议。"
+      },
+      {
+        question: "我购买了新车，需要如何更新我的汽车保险？",
+        answer: "购买新车后，您应该立即联系我们更新您的汽车保险。您需要提供新车的信息，包括品牌、型号、年份、车辆识别号码(VIN)等。根据新车的价值和特性，您的保险费用和保障范围可能需要调整。"
+      }
+    ]
+  },
+  {
+    title: "商业保险问题",
+    items: [
+      {
+        question: "哪些类型的企业需要商业保险？",
+        answer: "几乎所有类型的企业都需要某种形式的商业保险。无论是小型零售店、餐厅、办公室还是制造企业，都面临各种风险，包括财产损失、责任索赔、业务中断等。我们提供各种类型的商业保险，可以根据您企业的具体需求进行定制。"
+      },
+      {
+        question: "商业保险与个人保险有什么区别？",
+        answer: "商业保险专为企业设计，保障范围包括商业财产、商业责任、业务中断、员工赔偿等商业特定风险。个人保险则主要针对个人财产（如房屋、汽车）和个人责任提供保障。商业保险通常提供更高的保障额度，以应对企业可能面临的更大风险。"
+      },
+      {
+        question: "我的小型企业需要哪些基本的商业保险？",
+        answer: "对于大多数小型企业来说，基本的商业保险包括：商业财产保险（保护企业场所和设备）、商业责任保险（保护企业免受第三方损害索赔）、业务中断保险（在业务暂停期间提供收入支持）。根据您的行业和具体业务，可能还需要其他专门的保险类型。"
+      },
+      {
+        question: "业务中断保险包括哪些内容？",
+        answer: "业务中断保险在您的业务由于承保事件（如火灾、自然灾害等）而暂时无法运营时提供财务支持。它通常涵盖利润损失、固定经营成本（如租金、工资）、临时搬迁费用等。这类保险帮助企业在困难时期维持财务稳定，直到业务恢复正常运营。"
+      }
+    ]
+  },
+  {
+    title: "理赔相关问题",
+    items: [
+      {
+        question: "如何提交保险理赔？",
+        answer: "发生保险事故后，请立即联系我们的客服团队报告情况。我们将指导您完成理赔流程，包括填写必要的表格和提交相关文件。您可以通过电话、电子邮件或亲自到我们的办公室提交理赔申请。"
+      },
+      {
+        question: "理赔处理需要多长时间？",
+        answer: "理赔处理时间取决于索赔的复杂程度和所需文件的完整性。简单的索赔可能在几天内处理完毕，而复杂的索赔可能需要更长时间。我们承诺尽快处理每一个理赔案件，并在整个过程中保持与您的沟通。"
+      },
+      {
+        question: "如果我的理赔申请被拒绝，我可以做什么？",
+        answer: "如果您的理赔申请被拒绝，我们会解释拒绝的原因。如果您不同意这个决定，可以要求复审，并提供额外的信息或文件支持您的索赔。我们致力于公平处理每一个索赔，并愿意与您合作解决任何争议。"
+      },
+      {
+        question: "提交理赔申请后，我应该如何与保险公司保持联系？",
+        answer: "提交理赔申请后，您将获得一个索赔号码和负责处理您索赔的理赔专员的联系信息。您可以通过这些信息随时查询索赔进展。我们的理赔团队也会定期更新您的索赔状态，确保您了解每一步进展。"
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title="常见问题" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">常见问题</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">找到您关于保险的问题解答</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <!-- FAQ目录导航 -->
+      <div class="mb-12">
+        <h2 class="text-center mb-8">问题分类</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          {faqGroups.map((group, index) => (
+            <a href={`#section-${index}`} class="px-4 py-2 bg-light rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+              {group.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ内容 -->
+      {faqGroups.map((group, groupIndex) => (
+        <div id={`section-${groupIndex}`} class="mb-16 last:mb-0 scroll-mt-24">
+          <h2 class="text-2xl font-bold mb-6 border-b pb-2">{group.title}</h2>
+          <div class="space-y-6">
+            {group.items.map((item, itemIndex) => (
+              <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <details class="group">
+                  <summary class="flex justify-between items-center cursor-pointer p-6 bg-light">
+                    <h3 class="text-lg font-semibold">{item.question}</h3>
+                    <span class="text-primary transform group-open:rotate-180 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div class="p-6 pt-0">
+                    <p>{item.answer}</p>
+                  </div>
+                </details>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- 未解答问题 -->
+      <div class="bg-light p-8 rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-4">没有找到您的问题？</h2>
+        <p class="mb-6">如果您有其他问题或需要更详细的解答，请随时联系我们的客服团队。</p>
+        <a href={`/${lang}/contact`} class="btn-primary">联系我们</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // 处理FAQ手风琴效果
+    document.addEventListener('DOMContentLoaded', () => {
+      // 平滑滚动到锚点
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

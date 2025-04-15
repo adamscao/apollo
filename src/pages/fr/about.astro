@@ -1,0 +1,137 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'fr';
+---
+
+<BaseLayout title="À Propos" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">À Propos</h1>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h2 class="mb-6">À Propos d'Assurance Apollo</h2>
+          <p class="mb-4">Assurance Apollo a été fondée en 2015 en tant que sous-marque d'AssurPV, située à Brossard sur la Rive-Sud de Montréal, Canada. Nous nous spécialisons dans la fourniture de services d'assurance de qualité aux clients chinois, notamment l'assurance habitation, l'assurance automobile et l'assurance commerciale.</p>
+          <p class="mb-4">Les membres de notre équipe possèdent une vaste expérience dans l'industrie de l'assurance, maîtrisent le chinois et les langues officielles locales, et peuvent fournir un service en langue maternelle aux clients, assurant une communication sans obstacle et aidant les clients à comprendre pleinement les détails et les conditions des divers produits d'assurance.</p>
+          <p>Assurance Apollo s'engage à fournir des solutions d'assurance professionnelles et complètes pour protéger les biens et les intérêts de nos clients contre les pertes, rendant leur vie et leur travail plus sûrs.</p>
+        </div>
+        <div class="bg-light p-8 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            Image de l'entreprise (espace réservé)
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h2 class="text-center mb-10">Notre Mission et Vision</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-light p-8 rounded-lg">
+            <h3 class="mb-4 text-primary">Mission</h3>
+            <p>Aider les clients chinois à mieux comprendre et choisir les bonnes solutions d'assurance grâce à des services d'assurance professionnels et transparents, protégeant leurs maisons, véhicules et entreprises, rendant leur vie au Canada plus sûre et pratique.</p>
+          </div>
+          <div class="bg-light p-8 rounded-lg">
+            <h3 class="mb-4 text-primary">Vision</h3>
+            <p>Devenir le fournisseur de services d'assurance le plus fiable de la communauté chinoise au Canada, aidant chaque client à trouver les solutions d'assurance les plus adaptées grâce à des connaissances professionnelles et un service de qualité, réalisant la protection des biens et la gestion des risques.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-center mb-10">Nos Valeurs Fondamentales</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="border border-gray-200 p-6 rounded-lg text-center">
+            <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Intégrité et Fiabilité</h3>
+            <p>Nous fournissons des services d'assurance transparents et fiables basés sur l'intégrité, construisant des relations de confiance à long terme avec les clients.</p>
+          </div>
+          <div class="border border-gray-200 p-6 rounded-lg text-center">
+            <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Efficacité Professionnelle</h3>
+            <p>Notre équipe possède des connaissances professionnelles et une riche expérience, permettant un traitement efficace des besoins des clients et des réclamations d'assurance.</p>
+          </div>
+          <div class="border border-gray-200 p-6 rounded-lg text-center">
+            <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Client d'Abord</h3>
+            <p>Nous plaçons toujours les besoins de nos clients en premier, fournissant des solutions d'assurance personnalisées et des expériences de service attentives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-6">Avantages de Travailler avec Assurance Apollo</h2>
+      <p class="max-w-3xl mx-auto mb-12">Choisissez Assurance Apollo pour une expérience de service d'assurance professionnelle et attentive</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Service en Langue Maternelle</h3>
+          <p>Nous fournissons un service en chinois, éliminant les barrières linguistiques pour que vous compreniez pleinement votre couverture d'assurance.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Plans Personnalisés</h3>
+          <p>Solutions d'assurance personnalisées basées sur vos besoins spécifiques, assurant une couverture complète et abordable.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Réponse Rapide</h3>
+          <p>Nous nous engageons à répondre rapidement à vos demandes et besoins, fournissant un support de service opportun.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Équipe Professionnelle</h3>
+          <p>Notre équipe possède une vaste expérience dans l'industrie de l'assurance et peut vous fournir des conseils professionnels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container text-center">
+      <h2 class="mb-6">Contactez-nous pour en Savoir Plus</h2>
+      <p class="max-w-2xl mx-auto mb-8">Si vous souhaitez en savoir plus sur Assurance Apollo ou si vous avez des questions concernant l'assurance, n'hésitez pas à nous contacter à tout moment.</p>
+      <a href={`/${lang}/contact`} class="btn-primary">Contactez-nous</a>
+    </div>
+  </section>
+</BaseLayout>

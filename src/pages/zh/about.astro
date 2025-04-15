@@ -1,0 +1,137 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'zh';
+---
+
+<BaseLayout title="公司介绍" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">公司介绍</h1>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h2 class="mb-6">关于阿波罗保险公司</h2>
+          <p class="mb-4">阿波罗保险公司成立于2015年，是AssurPV的子品牌，位于加拿大蒙特利尔南岸Brossard地区。我们专注于为华人客户提供优质的保险服务，包括房屋保险、汽车保险和商业保险等多种保险产品。</p>
+          <p class="mb-4">我们的团队成员拥有丰富的保险行业经验，精通中文和当地官方语言，能够为客户提供母语服务，确保沟通无障碍，并帮助客户全面了解各类保险产品的细节和条款。</p>
+          <p>阿波罗保险公司致力于为客户提供专业、全面的保险解决方案，保护客户的财产和利益不受损失，让客户的生活和工作更加安心。</p>
+        </div>
+        <div class="bg-light p-8 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            公司图片占位
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h2 class="text-center mb-10">我们的使命与愿景</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-light p-8 rounded-lg">
+            <h3 class="mb-4 text-primary">使命</h3>
+            <p>通过提供专业、透明的保险服务，帮助华人客户更好地了解和选择适合自己的保险方案，保护他们的家庭、车辆和企业，让他们在加拿大的生活更加安心、便利。</p>
+          </div>
+          <div class="bg-light p-8 rounded-lg">
+            <h3 class="mb-4 text-primary">愿景</h3>
+            <p>成为加拿大华人社区最受信赖的保险服务提供商，通过专业知识和优质服务，帮助每一位客户找到最适合的保险方案，实现财产保障和风险管理。</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-center mb-10">我们的核心价值观</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="border border-gray-200 p-6 rounded-lg text-center">
+            <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">诚信可靠</h3>
+            <p>我们以诚信为基础，为客户提供透明、可靠的保险服务，建立长期互信关系。</p>
+          </div>
+          <div class="border border-gray-200 p-6 rounded-lg text-center">
+            <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">专业高效</h3>
+            <p>我们的团队拥有专业知识和丰富经验，能够高效处理客户需求和保险理赔。</p>
+          </div>
+          <div class="border border-gray-200 p-6 rounded-lg text-center">
+            <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">客户至上</h3>
+            <p>我们始终将客户的需求放在首位，提供个性化的保险方案和贴心的服务体验。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-6">与阿波罗保险公司合作的优势</h2>
+      <p class="max-w-3xl mx-auto mb-12">选择阿波罗保险公司，您将获得专业、贴心的保险服务体验</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">母语服务</h3>
+          <p>我们提供中文服务，消除语言障碍，让您充分了解保险内容。</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">个性化方案</h3>
+          <p>根据您的具体需求定制保险方案，确保保障全面且经济实惠。</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">快速响应</h3>
+          <p>我们承诺迅速回应您的咨询和需求，提供及时的服务支持。</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">专业团队</h3>
+          <p>我们的团队拥有丰富的保险行业经验，能够为您提供专业建议。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container text-center">
+      <h2 class="mb-6">联系我们了解更多</h2>
+      <p class="max-w-2xl mx-auto mb-8">如果您想了解更多关于阿波罗保险公司的信息，或有任何保险相关的问题，欢迎随时联系我们。</p>
+      <a href={`/${lang}/contact`} class="btn-primary">联系我们</a>
+    </div>
+  </section>
+</BaseLayout>

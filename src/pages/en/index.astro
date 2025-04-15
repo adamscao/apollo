@@ -1,0 +1,111 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'en';
+---
+
+<BaseLayout title="Home" lang={lang}>
+  <section class="bg-gradient-to-br from-primary to-accent text-white py-16 md:py-24">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="mb-6">Apollo Insurance</h1>
+        <p class="text-xl md:text-2xl mb-8">Professional protection for your life and property</p>
+        <div class="flex flex-wrap gap-4">
+          <a href={`/${lang}/services#home`} class="btn-secondary">Home Insurance</a>
+          <a href={`/${lang}/services#auto`} class="btn-secondary">Auto Insurance</a>
+          <a href={`/${lang}/services#business`} class="btn-secondary">Business Insurance</a>
+          <a href={`/${lang}/contact`} class="btn bg-white text-primary hover:bg-opacity-90">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <h2 class="text-center mb-12">About Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="mb-4">Apollo Insurance is a sub-brand of AssurPV, located in Brossard on the South Shore of Montreal, specializing in insurance services for Chinese clientele.</p>
+          <p class="mb-4">Our team has extensive industry experience and can provide you with attentive service in your native language, ensuring you fully understand all insurance options and choose the protection plan that best suits your needs.</p>
+          <p class="mb-6">Whether you need home insurance, auto insurance, or business insurance, we can provide you with customized solutions to fully protect your life and property.</p>
+          <a href={`/${lang}/about`} class="btn-primary">Learn More</a>
+        </div>
+        <div class="bg-light p-12 rounded-lg">
+          <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+            Company Image Placeholder
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Services</h2>
+      <p class="text-center mb-12 max-w-3xl mx-auto">We offer comprehensive insurance solutions to protect your home, vehicle, and business.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Home Insurance -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            Home Insurance Image Placeholder
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">Home Insurance</h3>
+            <p class="mb-4">Protect your home and property from risks such as natural disasters, fire, theft, and more.</p>
+            <a href={`/${lang}/services#home`} class="text-primary font-medium hover:underline inline-flex items-center">
+              Learn More
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Auto Insurance -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            Auto Insurance Image Placeholder
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">Auto Insurance</h3>
+            <p class="mb-4">Provide comprehensive vehicle protection against accidents, theft, and natural disasters.</p>
+            <a href={`/${lang}/services#auto`} class="text-primary font-medium hover:underline inline-flex items-center">
+              Learn More
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Business Insurance -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
+            Business Insurance Image Placeholder
+          </div>
+          <div class="p-6">
+            <h3 class="mb-3">Business Insurance</h3>
+            <p class="mb-4">Comprehensive protection for your business, including property, liability, business interruption, and more.</p>
+            <a href={`/${lang}/services#business`} class="text-primary font-medium hover:underline inline-flex items-center">
+              Learn More
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container text-center">
+      <h2 class="mb-6">Contact Us for a Free Consultation</h2>
+      <p class="max-w-2xl mx-auto mb-8">Not sure which insurance is right for you? Our professional advisors are available to help answer your questions and create the most suitable insurance plan for you.</p>
+      <a href={`/${lang}/contact`} class="btn-primary">Contact Us Now</a>
+    </div>
+  </section>
+</BaseLayout>
