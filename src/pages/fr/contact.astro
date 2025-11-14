@@ -22,26 +22,29 @@ const lang = 'fr';
           <h2 class="text-2xl font-bold mb-6">Envoyez un Message</h2>
           <p class="mb-8">Veuillez remplir le formulaire ci-dessous, et nous vous recontacterons dès que possible. Vous pouvez également nous contacter directement par téléphone ou par courriel.</p>
           
-          <form class="space-y-6">
+          <!-- Success/Error Message -->
+          <div id="formMessage" class="hidden mb-6 p-4 rounded-lg"></div>
+
+          <form id="contactForm" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
-                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre nom" />
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom <span class="text-red-500">*</span></label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre nom" />
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
-                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre numéro de téléphone" />
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone <span class="text-red-500">*</span></label>
+                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre numéro de téléphone" />
               </div>
             </div>
-            
+
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Courriel</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre adresse courriel" />
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Courriel <span class="text-red-500">*</span></label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Votre adresse courriel" />
             </div>
-            
+
             <div>
-              <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
-              <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet <span class="text-red-500">*</span></label>
+              <select id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                 <option value="" selected disabled>Veuillez sélectionner un sujet</option>
                 <option value="home-insurance">Demande d'Assurance Habitation</option>
                 <option value="auto-insurance">Demande d'Assurance Auto</option>
@@ -50,14 +53,23 @@ const lang = 'fr';
                 <option value="other">Autre Demande</option>
               </select>
             </div>
-            
+
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Veuillez décrire vos besoins ou questions en détail..."></textarea>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message <span class="text-red-500">*</span></label>
+              <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Veuillez décrire vos besoins ou questions en détail..."></textarea>
             </div>
-            
+
             <div>
-              <button type="submit" class="btn-primary w-full md:w-auto">Envoyer le Message</button>
+              <button type="submit" id="submitBtn" class="btn-primary w-full md:w-auto">
+                <span id="submitText">Envoyer le Message</span>
+                <span id="submitLoading" class="hidden">
+                  <svg class="animate-spin inline-block h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Envoi en cours...
+                </span>
+              </button>
             </div>
           </form>
         </div>
@@ -192,23 +204,90 @@ const lang = 'fr';
       const wechatButton = document.getElementById('wechatButton');
       const wechatModal = document.getElementById('wechatModal');
       const closeModal = document.getElementById('closeModal');
-      
+
       if (wechatButton && wechatModal && closeModal) {
         wechatButton.addEventListener('click', () => {
           wechatModal.classList.remove('hidden');
-          document.body.style.overflow = 'hidden'; // Empêcher le défilement en arrière-plan
+          document.body.style.overflow = 'hidden';
         });
-        
+
         closeModal.addEventListener('click', () => {
           wechatModal.classList.add('hidden');
-          document.body.style.overflow = ''; // Restaurer le défilement en arrière-plan
+          document.body.style.overflow = '';
         });
-        
-        // Fermer en cliquant à l'extérieur du modal
+
         wechatModal.addEventListener('click', (e) => {
           if (e.target === wechatModal) {
             wechatModal.classList.add('hidden');
             document.body.style.overflow = '';
+          }
+        });
+      }
+
+      // Fonctionnalité de Soumission du Formulaire de Contact
+      const contactForm = document.getElementById('contactForm');
+      const formMessage = document.getElementById('formMessage');
+      const submitBtn = document.getElementById('submitBtn');
+      const submitText = document.getElementById('submitText');
+      const submitLoading = document.getElementById('submitLoading');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          // Obtenir les données du formulaire
+          const formData = {
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+            lang: 'fr'
+          };
+
+          // Afficher l'état de chargement
+          submitBtn.disabled = true;
+          submitText.classList.add('hidden');
+          submitLoading.classList.remove('hidden');
+          formMessage.classList.add('hidden');
+
+          try {
+            // Soumettre le formulaire à la Fonction Netlify
+            const response = await fetch('/.netlify/functions/submit-contact', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              // Afficher le message de succès
+              formMessage.textContent = '✓ Merci pour votre demande! Nous avons bien reçu votre message et vous contacterons dans un délai de 1 à 2 jours ouvrables. Un courriel de confirmation a été envoyé à votre adresse.';
+              formMessage.className = 'mb-6 p-4 rounded-lg bg-green-50 text-green-800 border border-green-200';
+              formMessage.classList.remove('hidden');
+
+              // Réinitialiser le formulaire
+              contactForm.reset();
+
+              // Faire défiler vers la zone de message
+              formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+              throw new Error(result.error || 'Échec de la soumission');
+            }
+          } catch (error) {
+            // Afficher le message d'erreur
+            formMessage.textContent = '✗ Échec de la soumission. Veuillez réessayer plus tard ou nous contacter directement à: info@apolloins.ca';
+            formMessage.className = 'mb-6 p-4 rounded-lg bg-red-50 text-red-800 border border-red-200';
+            formMessage.classList.remove('hidden');
+            console.error('Erreur de soumission du formulaire:', error);
+          } finally {
+            // Restaurer l'état du bouton
+            submitBtn.disabled = false;
+            submitText.classList.remove('hidden');
+            submitLoading.classList.add('hidden');
           }
         });
       }
