@@ -12,19 +12,66 @@ const faqGroups = [
     items: [
       {
         question: "What is the overall structure of Quebec auto insurance? What do the government and commercial insurers each cover?",
-        answer: "Quebec operates under a model of \"government-covered personal injury + commercial company-covered vehicle/property damage.\" Personal Injury: Regardless of who is at fault, personal injuries (injury, disability, death) from traffic accidents in Quebec are covered by the provincial government's automobile insurance association, SAAQ (Société de l'assurance automobile du Québec). Vehicle and Property Damage: Covered by commercial insurance companies, including damage to your own vehicle and property damage to third parties (e.g., hitting someone else's car or house)."
+        answer: `<p>Quebec operates under a model of "government-covered personal injury + commercial company-covered vehicle/property damage."</p>
+
+<p><strong>Personal Injury:</strong><br>
+Regardless of who is at fault, personal injuries (injury, disability, death) from traffic accidents in Quebec are covered by the provincial government's automobile insurance association, SAAQ (Société de l'assurance automobile du Québec).</p>
+
+<p><strong>Vehicle and Property Damage:</strong><br>
+Covered by commercial insurance companies, including damage to your own vehicle and property damage to third parties (e.g., hitting someone else's car or house).</p>`
       },
       {
         question: "How are \"One-Way\" and \"Two-Way\" insurance understood in Quebec?",
-        answer: "These are colloquial terms, not official terminology. One-Way (Third-Party Liability): Usually refers to purchasing only the legally mandatory Third-Party Liability (Civil Liability) insurance. This coverage primarily pays for property damage to others, with a statutory minimum coverage typically quite high (e.g., 2 million CAD). If you injure someone while driving outside Quebec (e.g., in Ontario or the US), this coverage applies. Special case: In Quebec, if you have only \"One-Way\" insurance and are completely not at fault in an accident and the other party can be found, your insurance company will typically cover your vehicle damage. Two-Way (Full Coverage): Usually refers to having Third-Party Liability insurance plus coverage for your own vehicle damage, primarily including Collision and Comprehensive coverage."
+        answer: `<p>These are colloquial terms, not official terminology.</p>
+
+<p><strong>One-Way (Third-Party Liability):</strong><br>
+Usually refers to purchasing only the legally mandatory Third-Party Liability (Civil Liability) insurance.<br>
+This coverage primarily pays for property damage to others, with a statutory minimum coverage typically quite high (e.g., 2 million CAD).<br>
+If you injure someone while driving outside Quebec (e.g., in Ontario or the US), this coverage applies.</p>
+
+<p><strong>Special case:</strong><br>
+In Quebec, if you have only "One-Way" insurance and are completely not at fault in an accident and the other party can be found, your insurance company will typically cover your vehicle damage.</p>
+
+<p><strong>Two-Way (Full Coverage):</strong><br>
+Usually refers to having Third-Party Liability insurance plus coverage for your own vehicle damage, primarily including Collision and Comprehensive coverage.</p>`
       },
       {
         question: "What are the \"Three Major Coverages\" and \"Three Minor Coverages\"?",
-        answer: "Three Major Coverages: 1. Civil Liability (Third-Party Liability): Covers property damage to third parties. 2. Collision (Perils of Collision): Covers damage to your vehicle in \"at-fault\" or \"partially at-fault\" collision accidents. Requires paying a deductible. If you're \"not at fault,\" you typically don't pay the deductible. Maximum claim is the vehicle's market value (depreciated value) at the time of the accident. 3. Comprehensive (Specified Perils): Covers vehicle damage from non-collision causes, primarily including theft, vandalism, glass breakage, fire, flood, hail, etc. Also requires paying a deductible. Three Minor Coverages (usually endorsements): 1. Towing: Specifically refers to the cost of towing your vehicle to a repair shop after an accident. This differs from roadside assistance for vehicle breakdowns (e.g., out of gas, dead battery). 2. Loss of Use (Rental Car): Coverage for a replacement vehicle while your car is being repaired after an accident. Usually has daily limits and maximum duration (e.g., not exceeding three months). 3. Accident Benefits: Small supplemental payments for personal injuries in a car accident, for example, providing $2,000, $10,000, or $15,000 based on the level of injury, disability, or death."
+        answer: `<p><strong>Three Major Coverages:</strong></p>
+<ol class="ml-6 space-y-2">
+  <li><strong>Civil Liability (Third-Party Liability):</strong><br>
+  Covers property damage to third parties.</li>
+
+  <li><strong>Collision (Perils of Collision):</strong><br>
+  Covers damage to your vehicle in "at-fault" or "partially at-fault" collision accidents.<br>
+  Requires paying a deductible.<br>
+  If you're "not at fault," you typically don't pay the deductible.<br>
+  Maximum claim is the vehicle's market value (depreciated value) at the time of the accident.</li>
+
+  <li><strong>Comprehensive (Specified Perils):</strong><br>
+  Covers vehicle damage from non-collision causes, primarily including: theft, vandalism, glass breakage, fire, flood, hail, etc.<br>
+  Also requires paying a deductible.</li>
+</ol>
+
+<p><strong>Three Minor Coverages (usually endorsements):</strong></p>
+<ol class="ml-6 space-y-2">
+  <li><strong>Towing:</strong><br>
+  Specifically refers to the cost of towing your vehicle to a repair shop after an accident.<br>
+  This differs from roadside assistance for vehicle breakdowns (e.g., out of gas, dead battery).</li>
+
+  <li><strong>Loss of Use (Rental Car):</strong><br>
+  Coverage for a replacement vehicle while your car is being repaired after an accident.<br>
+  Usually has daily limits and maximum duration (e.g., not exceeding three months).</li>
+
+  <li><strong>Accident Benefits:</strong><br>
+  Small supplemental payments for personal injuries in a car accident, for example, providing $2,000, $10,000, or $15,000 based on the level of injury, disability, or death.</li>
+</ol>`
       },
       {
         question: "What is \"Replacement Cost Endorsement\" for new vehicles?",
-        answer: "This is an additional endorsement (Endorsement 43) that must be purchased separately. If your new car is totaled (stolen or written off) during the policy period, the insurance company will pay for a replacement new vehicle of the same model, rather than paying the depreciated market value."
+        answer: `<p>This is an additional endorsement (Endorsement 43) that must be purchased separately.</p>
+
+<p>If your new car is totaled (stolen or written off) during the policy period, the insurance company will pay for a replacement new vehicle of the same model, rather than paying the depreciated market value.</p>`
       }
     ]
   },
@@ -33,15 +80,40 @@ const faqGroups = [
     items: [
       {
         question: "After a vehicle collision, which insurance company pays?",
-        answer: "In Quebec, the \"Direct Compensation\" principle applies. Regardless of who is at fault, your vehicle damage is covered by your own insurance company. Insurance companies will settle internally based on fault determination. This simplifies the process - you don't need to deal directly with the other party's insurance company."
+        answer: `<p>In Quebec, the "Direct Compensation" principle applies.</p>
+
+<p>Regardless of who is at fault, your vehicle damage is covered by your own insurance company.<br>
+Insurance companies will settle internally based on fault determination.<br>
+This simplifies the process - you don't need to deal directly with the other party's insurance company.</p>`
       },
       {
         question: "If I only have \"One-Way\" (Third-Party Liability) insurance, will my vehicle damage be covered?",
-        answer: "If you are at fault: Your vehicle damage is NOT covered; you must pay for repairs yourself. If you are not at fault: In Quebec, if the responsible party can be clearly identified, your insurance company WILL cover your vehicle damage. Hit-and-run: If you cannot identify the responsible party, having only \"One-Way\" insurance typically means NO coverage."
+        answer: `<p><strong>If you are at fault:</strong><br>
+Your vehicle damage is NOT covered; you must pay for repairs yourself.</p>
+
+<p><strong>If you are not at fault:</strong><br>
+In Quebec, if the responsible party can be clearly identified, your insurance company WILL cover your vehicle damage.</p>
+
+<p><strong>Hit-and-run:</strong><br>
+If you cannot identify the responsible party, having only "One-Way" insurance typically means NO coverage.</p>`
       },
       {
         question: "How does the deductible work? How should I choose it?",
-        answer: "A deductible is the portion you must pay yourself when filing a claim. Operation: Usually applies to Collision and Comprehensive coverage. For example, if your Collision deductible is $500 and repair costs are $3,000, you pay $500 and the insurance company pays $2,500. If you are 50% at fault, you may need to pay half the deductible ($250). Selection: Higher deductibles mean lower premiums. Recommendation: For \"high-risk\" groups such as new immigrants, those without a Quebec driver's license, first-time Quebec insurance buyers, or single males under 25, initially choosing lower deductibles (e.g., $500 for Collision, $250 for Comprehensive) can reduce out-of-pocket expenses when filing claims. Note: \"Deductible waiver\" endorsements are not very popular in Quebec auto insurance, because even small claims within the deductible amount may cause next year's premium to increase, often making it not worthwhile."
+        answer: `<p>A deductible is the portion you must pay yourself when filing a claim.</p>
+
+<p><strong>Operation:</strong><br>
+Usually applies to Collision and Comprehensive coverage.<br>
+For example, if your Collision deductible is $500 and repair costs are $3,000, you pay $500 and the insurance company pays $2,500.<br>
+If you are 50% at fault, you may need to pay half the deductible ($250).</p>
+
+<p><strong>Selection:</strong><br>
+Higher deductibles mean lower premiums.</p>
+
+<p><strong>Recommendation:</strong><br>
+For "high-risk" groups such as new immigrants, those without a Quebec driver's license, first-time Quebec insurance buyers, or single males under 25, initially choosing lower deductibles (e.g., $500 for Collision, $250 for Comprehensive) can reduce out-of-pocket expenses when filing claims.</p>
+
+<p><strong>Note:</strong><br>
+"Deductible waiver" endorsements are not very popular in Quebec auto insurance, because even small claims within the deductible amount may cause next year's premium to increase, often making it not worthwhile.</p>`
       }
     ]
   },
@@ -50,15 +122,52 @@ const faqGroups = [
     items: [
       {
         question: "What should I do first after a minor accident?",
-        answer: "1. Ensure safety: Check for injuries. If there are any, immediately call 911. 2. Take photos: Before moving vehicles, photograph the relative positions of vehicles, collision points, license plates, and scene environment. 3. Move to safety: Move vehicles to the roadside or other safe location to avoid blocking traffic. 4. Exchange information: Exchange driver's licenses, vehicle registration documents, and proof of insurance with the other driver, and record their phone number. 5. Complete accident report: Fill out a Joint Report (Constat à l'amiable) together with the other party. Even if there's a dispute, each fills out their own section. Keep this form in your car. No need to wait for police (unless there are injuries or serious disputes). 6. Contact insurance company: Report to your insurance company as soon as possible."
+        answer: `<ol class="ml-6 space-y-3">
+  <li><strong>Ensure safety:</strong><br>
+  Check for injuries.<br>
+  If there are any, immediately call 911.</li>
+
+  <li><strong>Take photos:</strong><br>
+  Before moving vehicles, photograph the relative positions of vehicles, collision points, license plates, and scene environment.</li>
+
+  <li><strong>Move to safety:</strong><br>
+  Move vehicles to the roadside or other safe location to avoid blocking traffic.</li>
+
+  <li><strong>Exchange information:</strong><br>
+  Exchange driver's licenses, vehicle registration documents, and proof of insurance with the other driver, and record their phone number.</li>
+
+  <li><strong>Complete accident report:</strong><br>
+  Fill out a Joint Report (Constat à l'amiable) together with the other party.<br>
+  Even if there's a dispute, each fills out their own section.<br>
+  Keep this form in your car.<br>
+  No need to wait for police (unless there are injuries or serious disputes).</li>
+
+  <li><strong>Contact insurance company:</strong><br>
+  Report to your insurance company as soon as possible.</li>
+</ol>`
       },
       {
         question: "What should I do if the other party flees the scene?",
-        answer: "1. Report immediately: Call 911 or the local police station to obtain a Police Report Number. 2. Contact insurance company: Provide the police report number to your insurance company when filing a claim. In this situation, if you have Collision coverage, you can typically get a claim (may need to pay the deductible)."
+        answer: `<ol class="ml-6 space-y-3">
+  <li><strong>Report immediately:</strong><br>
+  Call 911 or the local police station to obtain a Police Report Number.</li>
+
+  <li><strong>Contact insurance company:</strong><br>
+  Provide the police report number to your insurance company when filing a claim.<br>
+  In this situation, if you have Collision coverage, you can typically get a claim (may need to pay the deductible).</li>
+</ol>`
       },
       {
         question: "Must I use the insurance company's designated repair shop?",
-        answer: "Not mandatory. Designated shop: The process is usually faster and smoother, with convenient rental car arrangements. You only pay the deductible (if any); the shop and insurance company settle directly. Your choice: You need to notify the insurance company first and wait for an adjuster to go to your chosen shop for damage assessment. If the shop's quote is higher than the insurance company's estimate, you may need to pay the difference yourself."
+        answer: `<p>Not mandatory.</p>
+
+<p><strong>Designated shop:</strong><br>
+The process is usually faster and smoother, with convenient rental car arrangements.<br>
+You only pay the deductible (if any); the shop and insurance company settle directly.</p>
+
+<p><strong>Your choice:</strong><br>
+You need to notify the insurance company first and wait for an adjuster to go to your chosen shop for damage assessment.<br>
+If the shop's quote is higher than the insurance company's estimate, you may need to pay the difference yourself.</p>`
       }
     ]
   },
@@ -67,19 +176,44 @@ const faqGroups = [
     items: [
       {
         question: "Who should be listed as drivers on the policy?",
-        answer: "Besides the vehicle owner (primary driver), anyone who regularly or periodically uses the vehicle should be declared as an additional driver. This includes: spouses or common-law partners, children of driving age living at home, and even roommates who regularly share the vehicle. Important: Spouses must be properly declared even if not living at the same address, if they share a vehicle. Conversely, friends (roommates) living together who share a vehicle can be added to the same policy. Failure to declare accurately may result in claim denial or retroactive premium increases."
+        answer: `<p>Besides the vehicle owner (primary driver), anyone who regularly or periodically uses the vehicle should be declared as an additional driver.</p>
+
+<p>This includes: spouses or common-law partners, children of driving age living at home, and even roommates who regularly share the vehicle.</p>
+
+<p><strong>Important:</strong><br>
+Spouses must be properly declared even if not living at the same address, if they share a vehicle.<br>
+Conversely, friends (roommates) living together who share a vehicle can be added to the same policy.<br>
+Failure to declare accurately may result in claim denial or retroactive premium increases.</p>`
       },
       {
         question: "If I lend my car to a friend and there's an accident, who is responsible?",
-        answer: "The responsibility chain typically is: 1. First responsible party: The vehicle owner's insurance company. The accident is recorded on the owner's policy, affecting the owner's future premiums and insurance record. 2. Second responsible party: The driver's (your friend's) own insurance company (if they have auto insurance). 3. Third responsible party: The driver pays out of pocket. Recommendation: To avoid affecting your own insurance record, if friends need long-term vehicle use, suggest they rent a car and purchase appropriate insurance."
+        answer: `<p>The responsibility chain typically is:</p>
+
+<ol class="ml-6 space-y-2">
+  <li><strong>First responsible party:</strong> The vehicle owner's insurance company.<br>
+  The accident is recorded on the owner's policy, affecting the owner's future premiums and insurance record.</li>
+
+  <li><strong>Second responsible party:</strong> The driver's (your friend's) own insurance company (if they have auto insurance).</li>
+
+  <li><strong>Third responsible party:</strong> The driver pays out of pocket.</li>
+</ol>
+
+<p><strong>Recommendation:</strong><br>
+To avoid affecting your own insurance record, if friends need long-term vehicle use, suggest they rent a car and purchase appropriate insurance.</p>`
       },
       {
         question: "Do I need to buy separate insurance when renting a car?",
-        answer: "Non-Quebec residents: Strongly recommended to purchase full coverage from the rental company. Quebec residents: If your own vehicle has \"full coverage\" (including Collision and Comprehensive), your insurance usually extends to cover rental vehicles (please confirm with your insurance advisor beforehand)."
+        answer: `<p><strong>Non-Quebec residents:</strong><br>
+Strongly recommended to purchase full coverage from the rental company.</p>
+
+<p><strong>Quebec residents:</strong><br>
+If your own vehicle has "full coverage" (including Collision and Comprehensive), your insurance usually extends to cover rental vehicles (please confirm with your insurance advisor beforehand).</p>`
       },
       {
         question: "If one spouse accidentally hits the other while driving, will insurance cover it?",
-        answer: "Yes. Vehicle damage is covered by auto insurance, and personal injury is covered by SAAQ."
+        answer: `<p>Yes.</p>
+
+<p>Vehicle damage is covered by auto insurance, and personal injury is covered by SAAQ.</p>`
       }
     ]
   },
@@ -88,31 +222,57 @@ const faqGroups = [
     items: [
       {
         question: "Will insurance cover an accident involving drunk driving?",
-        answer: "Third-party damage is usually COVERED, but the consequences are extremely serious: Criminal liability: Facing license suspension, fines, or even imprisonment. Insurance consequences: The insurance company will refuse to renew the following year, or mandate installation of an alcohol ignition interlock device. Once you have a refusal-to-renew record, obtaining coverage from other companies in the coming years will be very difficult and premiums will be extremely high."
+        answer: `<p>Third-party damage is usually COVERED, but the consequences are extremely serious:</p>
+
+<p><strong>Criminal liability:</strong><br>
+Facing license suspension, fines, or even imprisonment.</p>
+
+<p><strong>Insurance consequences:</strong><br>
+The insurance company will refuse to renew the following year, or mandate installation of an alcohol ignition interlock device.<br>
+Once you have a refusal-to-renew record, obtaining coverage from other companies in the coming years will be very difficult and premiums will be extremely high.</p>`
       },
       {
         question: "In what situations will insurance companies refuse to pay claims?",
-        answer: "Mainly involving fraudulent behavior: 1. Falsified policy: Providing false insurance application information. 2. Falsified license: Using invalid or forged driver's licenses. 3. False reporting: Lying about accident details, damage conditions, etc., when filing claims. If an adjuster discovers fraud during the claims process, they will directly cancel the policy and deny the claim."
+        answer: `<p>Mainly involving fraudulent behavior:</p>
+
+<ol class="ml-6 space-y-2">
+  <li><strong>Falsified policy:</strong> Providing false insurance application information.</li>
+  <li><strong>Falsified license:</strong> Using invalid or forged driver's licenses.</li>
+  <li><strong>False reporting:</strong> Lying about accident details, damage conditions, etc., when filing claims.</li>
+</ol>
+
+<p>If an adjuster discovers fraud during the claims process, they will directly cancel the policy and deny the claim.</p>`
       },
       {
         question: "What if I have bad credit and am refused by multiple insurance companies?",
-        answer: "If you are refused by five insurance companies consecutively, you can appeal to Quebec's Groupement des assureurs automobiles (GAA). At that point, the fifth company that refused you must provide you with a policy, but coverage is very limited, typically only providing the legally required minimum Third-Party Liability coverage (e.g., $500,000)."
+        answer: `<p>If you are refused by five insurance companies consecutively, you can appeal to Quebec's Groupement des assureurs automobiles (GAA).</p>
+
+<p>At that point, the fifth company that refused you must provide you with a policy, but coverage is very limited, typically only providing the legally required minimum Third-Party Liability coverage (e.g., $500,000).</p>`
       },
       {
         question: "Are dashcams useful?",
-        answer: "Very useful. Especially when there's a dispute about determining accident fault, dashcam footage can serve as strong evidence."
+        answer: `<p>Very useful.</p>
+
+<p>Especially when there's a dispute about determining accident fault, dashcam footage can serve as strong evidence.</p>`
       },
       {
         question: "If I have 2 or more vehicles, can I insure only one?",
-        answer: "No. Every registered vehicle on the road must have insurance. However, if a vehicle is planned for long-term non-use (e.g., over 60 days), you can contact the insurance company to suspend certain coverage (e.g., Collision) to reduce part of the premium."
+        answer: `<p>No.<br>
+Every registered vehicle on the road must have insurance.</p>
+
+<p>However, if a vehicle is planned for long-term non-use (e.g., over 60 days), you can contact the insurance company to suspend certain coverage (e.g., Collision) to reduce part of the premium.</p>`
       },
       {
         question: "If an accident occurs at a dealership or repair shop, who handles the claim?",
-        answer: "The dealership or repair shop's commercial insurance (Garage Policy) handles the claim."
+        answer: `<p>The dealership or repair shop's commercial insurance (Garage Policy) handles the claim.</p>`
       },
       {
         question: "Is it safe to drive an Ontario-plated car in Quebec?",
-        answer: "Theoretically legal, but there are some differences. If an accident occurs, both personal injury and vehicle damage will be handled by the Ontario insurance company following Ontario rules. In comparison, using Quebec plates and insurance means at least the personal injury portion benefits from Quebec SAAQ's unified coverage, with potentially clearer processes."
+        answer: `<p>Theoretically legal, but there are some differences.</p>
+
+<p>If an accident occurs, both personal injury and vehicle damage will be handled by the Ontario insurance company following Ontario rules.</p>
+
+<p>In comparison, using Quebec plates and insurance means at least the personal injury portion benefits from Quebec SAAQ's unified coverage, with potentially clearer processes.</p>`
       }
     ]
   },
@@ -121,15 +281,42 @@ const faqGroups = [
     items: [
       {
         question: "How does filing a claim affect next year's premium?",
-        answer: "Impact from smallest to largest: 1. No accidents during the year. 2. One accident but you were not at fault. 3. One accident and you were at fault. 4. Two or more accidents within one year. If you have two at-fault accidents within one year, the insurance company will very likely refuse to renew your policy, which will seriously affect your credit record and future insurance applications."
+        answer: `<p>Impact from smallest to largest:</p>
+
+<ol class="ml-6 space-y-2">
+  <li>No accidents during the year.</li>
+  <li>One accident but you were not at fault.</li>
+  <li>One accident and you were at fault.</li>
+  <li>Two or more accidents within one year.</li>
+</ol>
+
+<p>If you have two at-fault accidents within one year, the insurance company will very likely refuse to renew your policy, which will seriously affect your credit record and future insurance applications.</p>`
       },
       {
         question: "What factors significantly affect premiums?",
-        answer: "Common factors include: age, marital status, driving record (violations/accidents), insurance and driving experience, address (postal code risk area), vehicle model and value, usage (commuting/commercial/recreational), annual mileage, personal credit (requires consent to check and varies by company), etc."
+        answer: `<p>Common factors include:</p>
+
+<ul class="ml-6 space-y-1 list-disc">
+  <li>Age</li>
+  <li>Marital status</li>
+  <li>Driving record (violations/accidents)</li>
+  <li>Insurance and driving experience</li>
+  <li>Address (postal code risk area)</li>
+  <li>Vehicle model and value</li>
+  <li>Usage (commuting/commercial/recreational)</li>
+  <li>Annual mileage</li>
+  <li>Personal credit (requires consent to check and varies by company)</li>
+</ul>`
       },
       {
         question: "How can I reasonably reduce premiums?",
-        answer: "Choose appropriate deductible and coverage combinations (older cars can consider reducing vehicle damage coverage). Accurately declare primary drivers and usage to avoid retroactive increases. Maintain good driving and on-time payment records. Take advantage of multi-policy discounts (e.g., insuring both home and auto with the same company). Vehicles with anti-theft measures, parked in secure garages, or in low-risk postal code areas may all qualify for better rates."
+        answer: `<ul class="ml-6 space-y-2 list-disc">
+  <li>Choose appropriate deductible and coverage combinations (older cars can consider reducing vehicle damage coverage).</li>
+  <li>Accurately declare primary drivers and usage to avoid retroactive increases.</li>
+  <li>Maintain good driving and on-time payment records.</li>
+  <li>Take advantage of multi-policy discounts (e.g., insuring both home and auto with the same company).</li>
+  <li>Vehicles with anti-theft measures, parked in secure garages, or in low-risk postal code areas may all qualify for better rates.</li>
+</ul>`
       }
     ]
   }
@@ -175,7 +362,7 @@ const faqGroups = [
                     </span>
                   </summary>
                   <div class="p-6 pt-0">
-                    <p>{item.answer}</p>
+                    <div class="space-y-3" set:html={item.answer}></div>
                   </div>
                 </details>
               </div>
