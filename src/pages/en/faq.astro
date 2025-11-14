@@ -5,110 +5,131 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 // Define the language
 const lang = 'en';
 
-// FAQ items grouped by category
+// FAQ items grouped by category - Quebec Auto Insurance Professional FAQ
 const faqGroups = [
   {
-    title: "General Questions",
+    title: "Basic Concepts and Coverage Structure",
     items: [
       {
-        question: "What insurance products does Apollo Insurance offer?",
-        answer: "We primarily offer three types of insurance products: home insurance, auto insurance, and business insurance. Each type of insurance has different coverage options and can be customized according to your specific needs."
+        question: "What is the overall structure of Quebec auto insurance? What do the government and commercial insurers each cover?",
+        answer: "Quebec operates under a model of \"government-covered personal injury + commercial company-covered vehicle/property damage.\" Personal Injury: Regardless of who is at fault, personal injuries (injury, disability, death) from traffic accidents in Quebec are covered by the provincial government's automobile insurance association, SAAQ (Société de l'assurance automobile du Québec). Vehicle and Property Damage: Covered by commercial insurance companies, including damage to your own vehicle and property damage to third parties (e.g., hitting someone else's car or house)."
       },
       {
-        question: "How can I get an insurance quote?",
-        answer: "You can get an insurance quote through multiple channels: call our customer service hotline, send an email, submit a request through our website contact form, or visit our office in Brossard directly. Our professional advisors will provide you with detailed insurance quotes based on the information you provide."
+        question: "How are \"One-Way\" and \"Two-Way\" insurance understood in Quebec?",
+        answer: "These are colloquial terms, not official terminology. One-Way (Third-Party Liability): Usually refers to purchasing only the legally mandatory Third-Party Liability (Civil Liability) insurance. This coverage primarily pays for property damage to others, with a statutory minimum coverage typically quite high (e.g., 2 million CAD). If you injure someone while driving outside Quebec (e.g., in Ontario or the US), this coverage applies. Special case: In Quebec, if you have only \"One-Way\" insurance and are completely not at fault in an accident and the other party can be found, your insurance company will typically cover your vehicle damage. Two-Way (Full Coverage): Usually refers to having Third-Party Liability insurance plus coverage for your own vehicle damage, primarily including Collision and Comprehensive coverage."
       },
       {
-        question: "How do I pay for insurance?",
-        answer: "We accept various payment methods, including credit cards, debit cards, electronic transfers, and checks. You can choose to pay the annual premium in one lump sum or opt for monthly installments. The specific payment method can be discussed with our advisors when purchasing insurance."
+        question: "What are the \"Three Major Coverages\" and \"Three Minor Coverages\"?",
+        answer: "Three Major Coverages: 1. Civil Liability (Third-Party Liability): Covers property damage to third parties. 2. Collision (Perils of Collision): Covers damage to your vehicle in \"at-fault\" or \"partially at-fault\" collision accidents. Requires paying a deductible. If you're \"not at fault,\" you typically don't pay the deductible. Maximum claim is the vehicle's market value (depreciated value) at the time of the accident. 3. Comprehensive (Specified Perils): Covers vehicle damage from non-collision causes, primarily including theft, vandalism, glass breakage, fire, flood, hail, etc. Also requires paying a deductible. Three Minor Coverages (usually endorsements): 1. Towing: Specifically refers to the cost of towing your vehicle to a repair shop after an accident. This differs from roadside assistance for vehicle breakdowns (e.g., out of gas, dead battery). 2. Loss of Use (Rental Car): Coverage for a replacement vehicle while your car is being repaired after an accident. Usually has daily limits and maximum duration (e.g., not exceeding three months). 3. Accident Benefits: Small supplemental payments for personal injuries in a car accident, for example, providing $2,000, $10,000, or $15,000 based on the level of injury, disability, or death."
       },
       {
-        question: "Can I change my insurance coverage at any time?",
-        answer: "Yes, you can contact us to change your insurance coverage at any time during the policy term. Depending on the changes, your premium may be adjusted accordingly. We recommend that you notify us promptly when significant changes occur in your circumstances (such as moving, purchasing a new car, or home renovations) to ensure your insurance coverage remains effective and adequate."
+        question: "What is \"Replacement Cost Endorsement\" for new vehicles?",
+        answer: "This is an additional endorsement (Endorsement 43) that must be purchased separately. If your new car is totaled (stolen or written off) during the policy period, the insurance company will pay for a replacement new vehicle of the same model, rather than paying the depreciated market value."
       }
     ]
   },
   {
-    title: "Home Insurance Questions",
+    title: "Liability and Claims Rules",
     items: [
       {
-        question: "What does home insurance cover?",
-        answer: "Our home insurance typically includes coverage for home structure damage, personal property, third-party liability, temporary accommodation expenses, and protection against natural disasters such as floods, fires, and storms. The specific coverage will vary depending on the insurance plan you choose."
+        question: "After a vehicle collision, which insurance company pays?",
+        answer: "In Quebec, the \"Direct Compensation\" principle applies. Regardless of who is at fault, your vehicle damage is covered by your own insurance company. Insurance companies will settle internally based on fault determination. This simplifies the process - you don't need to deal directly with the other party's insurance company."
       },
       {
-        question: "Does my home insurance cover basement seepage?",
-        answer: "This depends on the cause of the seepage and your specific insurance plan. Generally, water damage caused by sudden pipe bursts is usually covered, while damage caused by long-term poor maintenance or groundwater seepage may not be covered. We recommend checking the specific terms of your insurance contract or consulting our insurance advisors directly."
+        question: "If I only have \"One-Way\" (Third-Party Liability) insurance, will my vehicle damage be covered?",
+        answer: "If you are at fault: Your vehicle damage is NOT covered; you must pay for repairs yourself. If you are not at fault: In Quebec, if the responsible party can be clearly identified, your insurance company WILL cover your vehicle damage. Hit-and-run: If you cannot identify the responsible party, having only \"One-Way\" insurance typically means NO coverage."
       },
       {
-        question: "What type of insurance do I need if I rent my property to others?",
-        answer: "If you rent your property to others, you need to purchase landlord insurance rather than standard homeowner's insurance. Landlord insurance provides coverage for the building structure, certain fixtures, and liability, but typically does not include the tenant's personal property. We recommend that your tenants purchase tenant insurance to protect their personal property."
-      },
-      {
-        question: "Does home insurance cover valuable items like jewelry or artwork?",
-        answer: "Standard home insurance typically has coverage limits for valuable items. If you own high-value jewelry, artwork, collections, or other valuable items, we recommend purchasing additional insurance riders or separate valuable items insurance to ensure they are adequately protected."
+        question: "How does the deductible work? How should I choose it?",
+        answer: "A deductible is the portion you must pay yourself when filing a claim. Operation: Usually applies to Collision and Comprehensive coverage. For example, if your Collision deductible is $500 and repair costs are $3,000, you pay $500 and the insurance company pays $2,500. If you are 50% at fault, you may need to pay half the deductible ($250). Selection: Higher deductibles mean lower premiums. Recommendation: For \"high-risk\" groups such as new immigrants, those without a Quebec driver's license, first-time Quebec insurance buyers, or single males under 25, initially choosing lower deductibles (e.g., $500 for Collision, $250 for Comprehensive) can reduce out-of-pocket expenses when filing claims. Note: \"Deductible waiver\" endorsements are not very popular in Quebec auto insurance, because even small claims within the deductible amount may cause next year's premium to increase, often making it not worthwhile."
       }
     ]
   },
   {
-    title: "Auto Insurance Questions",
+    title: "Accident Handling and Claims Process",
     items: [
       {
-        question: "What does auto insurance cover?",
-        answer: "Our auto insurance typically includes coverage for vehicle collision damage, third-party liability, vehicle theft, personal injury, and emergency roadside assistance. You can choose different levels of coverage based on your needs."
+        question: "What should I do first after a minor accident?",
+        answer: "1. Ensure safety: Check for injuries. If there are any, immediately call 911. 2. Take photos: Before moving vehicles, photograph the relative positions of vehicles, collision points, license plates, and scene environment. 3. Move to safety: Move vehicles to the roadside or other safe location to avoid blocking traffic. 4. Exchange information: Exchange driver's licenses, vehicle registration documents, and proof of insurance with the other driver, and record their phone number. 5. Complete accident report: Fill out a Joint Report (Constat à l'amiable) together with the other party. Even if there's a dispute, each fills out their own section. Keep this form in your car. No need to wait for police (unless there are injuries or serious disputes). 6. Contact insurance company: Report to your insurance company as soon as possible."
       },
       {
-        question: "Does my auto insurance apply when others drive my vehicle?",
-        answer: "Generally, your auto insurance will cover other drivers who drive your vehicle with your permission. However, the coverage may be affected by the driver's driving history and your specific insurance policy. We recommend checking your insurance policy details before allowing others to drive your vehicle."
+        question: "What should I do if the other party flees the scene?",
+        answer: "1. Report immediately: Call 911 or the local police station to obtain a Police Report Number. 2. Contact insurance company: Provide the police report number to your insurance company when filing a claim. In this situation, if you have Collision coverage, you can typically get a claim (may need to pay the deductible)."
       },
       {
-        question: "How can I reduce my auto insurance costs?",
-        answer: "Ways to reduce auto insurance costs include: increasing the deductible, maintaining a good driving record, combining multiple insurance policies for discounts, installing anti-theft devices, taking defensive driving courses, etc. Our insurance advisors can provide more suggestions to help you save on insurance costs based on your specific situation."
-      },
-      {
-        question: "I've purchased a new car. How do I update my auto insurance?",
-        answer: "After purchasing a new car, you should contact us immediately to update your auto insurance. You will need to provide information about the new car, including make, model, year, vehicle identification number (VIN), etc. Your insurance costs and coverage may need to be adjusted based on the value and characteristics of the new car."
+        question: "Must I use the insurance company's designated repair shop?",
+        answer: "Not mandatory. Designated shop: The process is usually faster and smoother, with convenient rental car arrangements. You only pay the deductible (if any); the shop and insurance company settle directly. Your choice: You need to notify the insurance company first and wait for an adjuster to go to your chosen shop for damage assessment. If the shop's quote is higher than the insurance company's estimate, you may need to pay the difference yourself."
       }
     ]
   },
   {
-    title: "Business Insurance Questions",
+    title: "Drivers and Usage Scenarios",
     items: [
       {
-        question: "What types of businesses need commercial insurance?",
-        answer: "Almost all types of businesses need some form of commercial insurance. Whether it's a small retail store, restaurant, office, or manufacturing company, they all face various risks including property loss, liability claims, business interruption, etc. We offer various types of commercial insurance that can be customized according to your business's specific needs."
+        question: "Who should be listed as drivers on the policy?",
+        answer: "Besides the vehicle owner (primary driver), anyone who regularly or periodically uses the vehicle should be declared as an additional driver. This includes: spouses or common-law partners, children of driving age living at home, and even roommates who regularly share the vehicle. Important: Spouses must be properly declared even if not living at the same address, if they share a vehicle. Conversely, friends (roommates) living together who share a vehicle can be added to the same policy. Failure to declare accurately may result in claim denial or retroactive premium increases."
       },
       {
-        question: "What is the difference between business insurance and personal insurance?",
-        answer: "Business insurance is designed specifically for businesses, with coverage including commercial property, commercial liability, business interruption, employee compensation, and other business-specific risks. Personal insurance primarily provides coverage for personal property (such as homes, cars) and personal liability. Business insurance typically offers higher coverage limits to address the potentially larger risks businesses may face."
+        question: "If I lend my car to a friend and there's an accident, who is responsible?",
+        answer: "The responsibility chain typically is: 1. First responsible party: The vehicle owner's insurance company. The accident is recorded on the owner's policy, affecting the owner's future premiums and insurance record. 2. Second responsible party: The driver's (your friend's) own insurance company (if they have auto insurance). 3. Third responsible party: The driver pays out of pocket. Recommendation: To avoid affecting your own insurance record, if friends need long-term vehicle use, suggest they rent a car and purchase appropriate insurance."
       },
       {
-        question: "What basic commercial insurance does my small business need?",
-        answer: "For most small businesses, basic commercial insurance includes: commercial property insurance (protecting business premises and equipment), commercial liability insurance (protecting the business from third-party damage claims), and business interruption insurance (providing income support during business suspension). Depending on your industry and specific business operations, you may need other specialized types of insurance."
+        question: "Do I need to buy separate insurance when renting a car?",
+        answer: "Non-Quebec residents: Strongly recommended to purchase full coverage from the rental company. Quebec residents: If your own vehicle has \"full coverage\" (including Collision and Comprehensive), your insurance usually extends to cover rental vehicles (please confirm with your insurance advisor beforehand)."
       },
       {
-        question: "What does business interruption insurance include?",
-        answer: "Business interruption insurance provides financial support when your business is temporarily unable to operate due to covered events (such as fire, natural disasters, etc.). It typically covers profit loss, fixed operating costs (such as rent, wages), temporary relocation expenses, etc. This type of insurance helps businesses maintain financial stability during difficult times until normal operations resume."
+        question: "If one spouse accidentally hits the other while driving, will insurance cover it?",
+        answer: "Yes. Vehicle damage is covered by auto insurance, and personal injury is covered by SAAQ."
       }
     ]
   },
   {
-    title: "Claims Related Questions",
+    title: "Special Situations and Common Questions",
     items: [
       {
-        question: "How do I submit an insurance claim?",
-        answer: "After an insurance incident occurs, please immediately contact our customer service team to report the situation. We will guide you through the claims process, including completing necessary forms and submitting relevant documents. You can submit your claim application by phone, email, or in person at our office."
+        question: "Will insurance cover an accident involving drunk driving?",
+        answer: "Third-party damage is usually COVERED, but the consequences are extremely serious: Criminal liability: Facing license suspension, fines, or even imprisonment. Insurance consequences: The insurance company will refuse to renew the following year, or mandate installation of an alcohol ignition interlock device. Once you have a refusal-to-renew record, obtaining coverage from other companies in the coming years will be very difficult and premiums will be extremely high."
       },
       {
-        question: "How long does the claims process take?",
-        answer: "The claims processing time depends on the complexity of the claim and the completeness of the required documents. Simple claims may be processed within a few days, while complex claims may take longer. We are committed to processing each claim as quickly as possible and maintaining communication with you throughout the process."
+        question: "In what situations will insurance companies refuse to pay claims?",
+        answer: "Mainly involving fraudulent behavior: 1. Falsified policy: Providing false insurance application information. 2. Falsified license: Using invalid or forged driver's licenses. 3. False reporting: Lying about accident details, damage conditions, etc., when filing claims. If an adjuster discovers fraud during the claims process, they will directly cancel the policy and deny the claim."
       },
       {
-        question: "What can I do if my claim is denied?",
-        answer: "If your claim is denied, we will explain the reason for the denial. If you disagree with this decision, you can request a review and provide additional information or documents to support your claim. We are committed to handling each claim fairly and are willing to work with you to resolve any disputes."
+        question: "What if I have bad credit and am refused by multiple insurance companies?",
+        answer: "If you are refused by five insurance companies consecutively, you can appeal to Quebec's Groupement des assureurs automobiles (GAA). At that point, the fifth company that refused you must provide you with a policy, but coverage is very limited, typically only providing the legally required minimum Third-Party Liability coverage (e.g., $500,000)."
       },
       {
-        question: "How do I stay in touch with the insurance company after submitting a claim?",
-        answer: "After submitting a claim, you will receive a claim number and contact information for the claims specialist handling your claim. You can use this information to inquire about the progress of your claim at any time. Our claims team will also regularly update you on the status of your claim, ensuring you are aware of each step of progress."
+        question: "Are dashcams useful?",
+        answer: "Very useful. Especially when there's a dispute about determining accident fault, dashcam footage can serve as strong evidence."
+      },
+      {
+        question: "If I have 2 or more vehicles, can I insure only one?",
+        answer: "No. Every registered vehicle on the road must have insurance. However, if a vehicle is planned for long-term non-use (e.g., over 60 days), you can contact the insurance company to suspend certain coverage (e.g., Collision) to reduce part of the premium."
+      },
+      {
+        question: "If an accident occurs at a dealership or repair shop, who handles the claim?",
+        answer: "The dealership or repair shop's commercial insurance (Garage Policy) handles the claim."
+      },
+      {
+        question: "Is it safe to drive an Ontario-plated car in Quebec?",
+        answer: "Theoretically legal, but there are some differences. If an accident occurs, both personal injury and vehicle damage will be handled by the Ontario insurance company following Ontario rules. In comparison, using Quebec plates and insurance means at least the personal injury portion benefits from Quebec SAAQ's unified coverage, with potentially clearer processes."
+      }
+    ]
+  },
+  {
+    title: "Premiums and Influencing Factors",
+    items: [
+      {
+        question: "How does filing a claim affect next year's premium?",
+        answer: "Impact from smallest to largest: 1. No accidents during the year. 2. One accident but you were not at fault. 3. One accident and you were at fault. 4. Two or more accidents within one year. If you have two at-fault accidents within one year, the insurance company will very likely refuse to renew your policy, which will seriously affect your credit record and future insurance applications."
+      },
+      {
+        question: "What factors significantly affect premiums?",
+        answer: "Common factors include: age, marital status, driving record (violations/accidents), insurance and driving experience, address (postal code risk area), vehicle model and value, usage (commuting/commercial/recreational), annual mileage, personal credit (requires consent to check and varies by company), etc."
+      },
+      {
+        question: "How can I reasonably reduce premiums?",
+        answer: "Choose appropriate deductible and coverage combinations (older cars can consider reducing vehicle damage coverage). Accurately declare primary drivers and usage to avoid retroactive increases. Maintain good driving and on-time payment records. Take advantage of multi-policy discounts (e.g., insuring both home and auto with the same company). Vehicles with anti-theft measures, parked in secure garages, or in low-risk postal code areas may all qualify for better rates."
       }
     ]
   }

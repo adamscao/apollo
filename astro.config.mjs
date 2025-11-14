@@ -10,7 +10,7 @@ export default defineConfig({
   },
   vite: {
     server: {
-      allowedHosts: ['appolo.smartcubes.uk']
+      allowedHosts: ['appolo.smartcubes.uk', 'apolloins.ca']
     }
   }
 });
