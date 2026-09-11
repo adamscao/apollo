@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# local secrets (Cloudflare/Netlify tokens, etc.)
+.secret
+
 # macOS-specific files
 .DS_Store
 
