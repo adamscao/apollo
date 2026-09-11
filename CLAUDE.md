@@ -51,3 +51,14 @@ Tailwind CSS (via `@astrojs/tailwind`) with a custom brand palette defined in `t
 ### Deployment
 
 `netlify.toml` builds with `npm run build`, publishes `dist/`, and points Netlify Functions at `netlify/functions/`. A catch-all redirect (`/*` → `/index.html`, 200) is in place for client-side routing. `astro.config.mjs` allows dev-server hosts `appolo.smartcubes.uk` and `apolloins.ca`.
+
+Cloudflare (DNS) and Netlify (hosting) are managed under the `apolloassurance@gmail.com` account; API tokens for both are kept locally in a git-ignored `.secret` file (not committed).
+
+### Git remotes
+
+Two GitHub remotes are kept in sync — there is no GitLab/`origin` remote:
+
+- `deploy` — `apolloassurance/apollo` (company account, `apolloassurance@gmail.com`). Treat as primary/upstream.
+- `github` — `adamscao/apollo` (personal account).
+
+Push to **both** remotes when publishing changes (`git push deploy main && git push github main`). Each remote authenticates with a different SSH key; the identity mapping is configured locally per clone (`core.sshCommand` in `.git/config` plus a dispatch script in `.git/`, not in `~/.ssh/config`), so it isn't visible in tracked files and must be set up again on a fresh clone.
