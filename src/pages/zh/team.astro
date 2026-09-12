@@ -8,40 +8,39 @@ const lang = 'zh';
 // Team members data
 const teamMembers = [
   {
-    name: '曹梦阳',
-    title: '创始人兼首席执行官',
-    bio: '曹梦阳拥有超过15年的保险行业经验，曾在多家知名保险公司担任高管职位。他精通保险市场，专注于为华人客户提供专业的保险服务。',
-    image: 'team-placeholder.jpg'
+    name: '曹梦阳（Jacques）',
+    title: '总经理',
+    phone: '450-912-6302',
+    extension: '324',
+    email: 'jcao@assurancespv.com'
   },
   {
-    name: '彭冰',
-    title: '首席运营官',
-    bio: '彭冰拥有丰富的保险和客户服务经验，负责公司的日常运营和客户关系管理。她致力于优化服务流程，提升客户体验。',
-    image: 'team-placeholder.jpg'
+    name: '许媛媛（Justine）',
+    title: '客户经理',
+    phone: '450-912-6305',
+    extension: '323',
+    email: 'jxu@assurancespv.com'
   },
   {
-    name: '王强',
-    title: '高级保险顾问',
-    bio: '王强专注于房屋和商业保险领域，拥有10年以上的行业经验。他善于分析客户需求，为客户提供最适合的保险方案。',
-    image: 'team-placeholder.jpg'
+    name: '李辉（Lily）',
+    title: '客户经理',
+    phone: '450-912-6303',
+    extension: '303',
+    email: 'lli@assurancespv.com'
   },
   {
-    name: '陈静',
-    title: '汽车保险专家',
-    bio: '陈静在汽车保险领域拥有专业知识和丰富经验，熟悉各类汽车保险产品和政策，能够为客户提供专业的汽车保险咨询和服务。',
-    image: 'team-placeholder.jpg'
+    name: '武冬梅（May）',
+    title: '客户经理',
+    phone: '450-912-6304',
+    extension: '334',
+    email: 'mwu@assurancespv.com'
   },
   {
-    name: '赵伟',
-    title: '客户服务主管',
-    bio: '赵伟负责客户服务团队的管理工作，确保客户获得及时、专业的服务体验。他关注客户需求，致力于提供卓越的客户服务。',
-    image: 'team-placeholder.jpg'
-  },
-  {
-    name: '林小红',
-    title: '理赔专员',
-    bio: '林小红专注于保险理赔服务，拥有丰富的理赔处理经验。她能够高效处理各类理赔案件，确保客户在需要时获得及时的赔付。',
-    image: 'team-placeholder.jpg'
+    name: '裴小佳（Brigitte）',
+    title: '客户经理',
+    phone: '450-912-4835',
+    extension: '325',
+    email: 'bpei@assurancespv.com'
   }
 ];
 ---
@@ -66,7 +65,8 @@ const teamMembers = [
           <div class="bg-light rounded-lg overflow-hidden shadow-sm p-6">
             <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
             <p class="text-primary font-medium mb-3">{member.title}</p>
-            <p>{member.bio}</p>
+            <p>电话：{member.phone}（分机 {member.extension}）</p>
+            <p>邮箱：<a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
           </div>
         ))}
       </div>

@@ -8,40 +8,39 @@ const lang = 'fr';
 // Team members data
 const teamMembers = [
   {
-    name: 'Mengyang Cao',
-    title: 'Fondateur et PDG',
-    bio: 'Mengyang Cao possède plus de 15 ans d\'expérience dans l\'industrie de l\'assurance, ayant occupé des postes de direction dans plusieurs compagnies d\'assurance réputées. Il connaît bien le marché de l\'assurance et se concentre sur la fourniture de services d\'assurance professionnels aux clients chinois.',
-    image: 'team-placeholder.jpg'
+    name: '曹梦阳 (Jacques)',
+    title: 'Directeur Général',
+    phone: '450-912-6302',
+    extension: '324',
+    email: 'jcao@assurancespv.com'
   },
   {
-    name: 'Bing Peng',
-    title: 'Directrice des Opérations',
-    bio: 'Bing Peng possède une vaste expérience en assurance et service client, responsable des opérations quotidiennes de l\'entreprise et de la gestion des relations clients. Elle se consacre à l\'optimisation des processus de service et à l\'amélioration de l\'expérience client.',
-    image: 'team-placeholder.jpg'
+    name: '许媛媛 (Justine)',
+    title: 'Gestionnaire de Compte',
+    phone: '450-912-6305',
+    extension: '323',
+    email: 'jxu@assurancespv.com'
   },
   {
-    name: 'Qiang Wang',
-    title: 'Conseiller Principal en Assurance',
-    bio: 'Qiang Wang se spécialise dans l\'assurance habitation et commerciale avec plus de 10 ans d\'expérience dans l\'industrie. Il excelle dans l\'analyse des besoins des clients et la fourniture des solutions d\'assurance les plus adaptées.',
-    image: 'team-placeholder.jpg'
+    name: '李辉 (Lily)',
+    title: 'Gestionnaire de Compte',
+    phone: '450-912-6303',
+    extension: '303',
+    email: 'lli@assurancespv.com'
   },
   {
-    name: 'Jing Chen',
-    title: 'Spécialiste en Assurance Auto',
-    bio: 'Jing Chen possède des connaissances professionnelles et une vaste expérience en assurance automobile, connaît bien les divers produits et politiques d\'assurance auto, et peut fournir des services de conseil et des services d\'assurance automobile professionnels.',
-    image: 'team-placeholder.jpg'
+    name: '武冬梅 (May)',
+    title: 'Gestionnaire de Compte',
+    phone: '450-912-6304',
+    extension: '334',
+    email: 'mwu@assurancespv.com'
   },
   {
-    name: 'Wei Zhao',
-    title: 'Directeur du Service Client',
-    bio: 'Wei Zhao gère l\'équipe de service client, s\'assurant que les clients reçoivent un service rapide et professionnel. Il se concentre sur les besoins des clients et s\'engage à fournir un excellent service client.',
-    image: 'team-placeholder.jpg'
-  },
-  {
-    name: 'Xiaohong Lin',
-    title: 'Spécialiste des Réclamations',
-    bio: 'Xiaohong Lin se spécialise dans les services de réclamations d\'assurance avec une vaste expérience dans le traitement des réclamations. Elle peut traiter efficacement divers cas de réclamations, garantissant que les clients reçoivent une indemnisation rapide lorsqu\'ils en ont besoin.',
-    image: 'team-placeholder.jpg'
+    name: '裴小佳 (Brigitte)',
+    title: 'Gestionnaire de Compte',
+    phone: '450-912-4835',
+    extension: '325',
+    email: 'bpei@assurancespv.com'
   }
 ];
 ---
@@ -66,7 +65,8 @@ const teamMembers = [
           <div class="bg-light rounded-lg overflow-hidden shadow-sm p-6">
             <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
             <p class="text-primary font-medium mb-3">{member.title}</p>
-            <p>{member.bio}</p>
+            <p>Téléphone : {member.phone} (poste {member.extension})</p>
+            <p>Courriel : <a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
           </div>
         ))}
       </div>
