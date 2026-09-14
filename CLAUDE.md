@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Working with the user
+
+Communicate with the user in Chinese (中文) in this project.
+
+Software not already available locally may be installed ad hoc via `nix shell nixpkgs#<package>` (or `nix develop`) rather than modifying the system — e.g. `nix shell nixpkgs#imagemagick -c magick ...` was used to crop team WeChat QR code screenshots down to just the QR card.
+
 ## Project
 
 Marketing/informational website for Apollo Insurance (阿波罗保险公司 / Assurance Apollo), a sub-brand of AssurPV based in Brossard, Quebec, Canada, serving Chinese-speaking clients. Built with Astro + Tailwind CSS, deployed to Netlify (with a Netlify Function handling the contact form).
