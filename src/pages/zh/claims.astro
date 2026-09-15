@@ -81,6 +81,15 @@ const apolloSupport = [
     </div>
   </section>
 
+  <section class="bg-secondary/20 py-4">
+    <div class="container">
+      <p class="text-center text-dark">
+        语言沟通有困难，或不确定理赔进度该找谁问？
+        <a href="#apollo-support" class="font-semibold text-primary hover:underline">看看阿波罗能为您提供哪些协助 ↓</a>
+      </p>
+    </div>
+  </section>
+
   <section class="py-16">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center mb-12">
@@ -89,9 +98,6 @@ const apolloSupport = [
       </div>
 
       <div class="relative">
-        <!-- 垂直时间线 (仅在大屏幕显示) -->
-        <div class="hidden md:block absolute left-1/2 -ml-0.5 w-1 h-full bg-gray-200"></div>
-
         {claimSteps.map((step, index) => (
           <div class={`flex flex-col md:flex-row items-center md:items-start mb-12 last:mb-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
             <!-- 步骤数字圆圈 -->
@@ -125,11 +131,11 @@ const apolloSupport = [
           事故处理单（Constat Amiable）
         </h3>
         <p class="mb-4">事故处理单目前仅提供英语和法语的官方在线版本，您也可以下载法语原版空白表格，或对照中文参考翻译版填写。</p>
-        <div class="flex flex-wrap gap-3">
-          <a href="https://infoassurance.ca/en/joint-report" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">在线填写（英语版）</a>
-          <a href="https://infoassurance.ca/constat-amiable/" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">在线填写（法语版）</a>
-          <a href="/documents/constat-amiable-2023-fr.pdf" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">下载法语原版（PDF）</a>
-          <a href="/documents/constat-amiable-2023-cn.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">下载中文参考翻译版（PDF）</a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <a href="https://infoassurance.ca/en/joint-report" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">在线填写（英语版）</a>
+          <a href="https://gaa.qc.ca/media/140522/gaa-formulaire-constat-amiable-2023-fra-web.pdf" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">下载法语原版（PDF）</a>
+          <a href="https://infoassurance.ca/constat-amiable/" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">在线填写（法语版）</a>
+          <a href="/documents/constat-amiable-2023-cn.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary text-center">下载中文参考翻译版（PDF）</a>
         </div>
         <p class="mt-4 text-sm text-dark/70">中文参考翻译版仅供对照参考，如与法语原文有出入，以官方法语原文为准。填写并签署事故处理单不代表承认事故责任。</p>
       </div>
@@ -194,7 +200,7 @@ const apolloSupport = [
     </div>
   </section>
 
-  <section class="py-16">
+  <section id="apollo-support" class="py-16 scroll-mt-20">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center mb-4">
         <h2 class="mb-6">阿波罗能为您提供的协助</h2>

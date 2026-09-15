@@ -81,6 +81,15 @@ const apolloSupport = [
     </div>
   </section>
 
+  <section class="bg-secondary/20 py-4">
+    <div class="container">
+      <p class="text-center text-dark">
+        Having trouble communicating, or not sure who to ask about your claim's progress?
+        <a href="#apollo-support" class="font-semibold text-primary hover:underline">See how Apollo can help ↓</a>
+      </p>
+    </div>
+  </section>
+
   <section class="py-16">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center mb-12">
@@ -89,9 +98,6 @@ const apolloSupport = [
       </div>
 
       <div class="relative">
-        <!-- Vertical timeline (only displayed on large screens) -->
-        <div class="hidden md:block absolute left-1/2 -ml-0.5 w-1 h-full bg-gray-200"></div>
-
         {claimSteps.map((step, index) => (
           <div class={`flex flex-col md:flex-row items-center md:items-start mb-12 last:mb-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
             <!-- Step number circle -->
@@ -125,11 +131,11 @@ const apolloSupport = [
           Accident Report Form (Constat Amiable)
         </h3>
         <p class="mb-4">The official online accident report form is currently only available in English and French. You can also download the original French blank form, or refer to the Chinese reference translation alongside it.</p>
-        <div class="flex flex-wrap gap-3">
-          <a href="https://infoassurance.ca/en/joint-report" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">Fill Online (English)</a>
-          <a href="https://infoassurance.ca/constat-amiable/" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">Fill Online (French)</a>
-          <a href="/documents/constat-amiable-2023-fr.pdf" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">Download Official Form (French, PDF)</a>
-          <a href="/documents/constat-amiable-2023-cn.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">Download Reference Translation (Chinese, PDF)</a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <a href="https://infoassurance.ca/en/joint-report" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">Fill Online (English)</a>
+          <a href="https://gaa.qc.ca/media/140522/gaa-formulaire-constat-amiable-2023-fra-web.pdf" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">Download Official Form (French, PDF)</a>
+          <a href="https://infoassurance.ca/constat-amiable/" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">Fill Online (French)</a>
+          <a href="/documents/constat-amiable-2023-cn.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary text-center">Download Reference Translation (Chinese, PDF)</a>
         </div>
         <p class="mt-4 text-sm text-dark/70">The Chinese reference translation is provided for comparison only; if it differs from the official French text, the French original prevails. Completing and signing the accident report form does not constitute an admission of fault.</p>
       </div>
@@ -194,7 +200,7 @@ const apolloSupport = [
     </div>
   </section>
 
-  <section class="py-16">
+  <section id="apollo-support" class="py-16 scroll-mt-20">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center mb-4">
         <h2 class="mb-6">Support Apollo Can Offer</h2>

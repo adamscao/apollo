@@ -81,6 +81,15 @@ const apolloSupport = [
     </div>
   </section>
 
+  <section class="bg-secondary/20 py-4">
+    <div class="container">
+      <p class="text-center text-dark">
+        Des difficultés de communication, ou vous ne savez pas à qui demander l'avancement de votre réclamation?
+        <a href="#apollo-support" class="font-semibold text-primary hover:underline">Découvrez comment Assurance Apollo peut vous aider ↓</a>
+      </p>
+    </div>
+  </section>
+
   <section class="py-16">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center mb-12">
@@ -89,9 +98,6 @@ const apolloSupport = [
       </div>
 
       <div class="relative">
-        <!-- Chronologie verticale (affichée uniquement sur les grands écrans) -->
-        <div class="hidden md:block absolute left-1/2 -ml-0.5 w-1 h-full bg-gray-200"></div>
-
         {claimSteps.map((step, index) => (
           <div class={`flex flex-col md:flex-row items-center md:items-start mb-12 last:mb-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
             <!-- Cercle numéroté de l'étape -->
@@ -125,11 +131,11 @@ const apolloSupport = [
           Constat amiable d'accident automobile
         </h3>
         <p class="mb-4">Le formulaire officiel en ligne n'est actuellement disponible qu'en anglais et en français. Vous pouvez aussi télécharger le formulaire original vierge en français, ou vous référer à la traduction de référence en chinois.</p>
-        <div class="flex flex-wrap gap-3">
-          <a href="https://infoassurance.ca/en/joint-report" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">Remplir en ligne (anglais)</a>
-          <a href="https://infoassurance.ca/constat-amiable/" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">Remplir en ligne (français)</a>
-          <a href="/documents/constat-amiable-2023-fr.pdf" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100">Télécharger le formulaire officiel (français, PDF)</a>
-          <a href="/documents/constat-amiable-2023-cn.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">Télécharger la traduction de référence (chinois, PDF)</a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <a href="https://infoassurance.ca/en/joint-report" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">Remplir en ligne (anglais)</a>
+          <a href="https://gaa.qc.ca/media/140522/gaa-formulaire-constat-amiable-2023-fra-web.pdf" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">Télécharger le formulaire officiel (français, PDF)</a>
+          <a href="https://infoassurance.ca/constat-amiable/" target="_blank" rel="noopener noreferrer" class="btn bg-light text-dark border border-gray-300 hover:bg-gray-100 text-center">Remplir en ligne (français)</a>
+          <a href="/documents/constat-amiable-2023-cn.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary text-center">Télécharger la traduction de référence (chinois, PDF)</a>
         </div>
         <p class="mt-4 text-sm text-dark/70">La traduction de référence en chinois est fournie à titre indicatif seulement; en cas de divergence avec le texte français officiel, ce dernier prévaut. Remplir et signer le constat amiable ne constitue pas une reconnaissance de responsabilité.</p>
       </div>
@@ -194,7 +200,7 @@ const apolloSupport = [
     </div>
   </section>
 
-  <section class="py-16">
+  <section id="apollo-support" class="py-16 scroll-mt-20">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center mb-4">
         <h2 class="mb-6">Le soutien qu'Assurance Apollo peut vous offrir</h2>
