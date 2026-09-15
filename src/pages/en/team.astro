@@ -5,9 +5,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 // Define the language
 const lang = 'en';
 
-// Company switchboard and toll-free line, shared by every team member
+// Company switchboard, shared by every team member
 const MAIN_PHONE = '450-676-3356';
-const TOLL_FREE = '1-800-676-6313';
 
 // Team members data
 const teamMembers = [
@@ -55,7 +54,7 @@ const teamMembers = [
     name: 'Lucie Dagenais',
     title: 'Head of Accounting',
     direct: '450-676-7707',
-    email: 'ldagenais@assurpv.qc.ca',
+    email: 'interac@assurancespv.com',
     tip: '💡 Payment tip: To pay by e-Transfer, send to interac@assurancespv.com (note: the first letter is a lowercase "i"). Security question: "service rendu", answer: "assurance". Please include your name and policy number in the comment field.'
   },
   {
@@ -91,7 +90,6 @@ const teamMembers = [
             <div class="space-y-1 text-gray-700">
               <p>Switchboard: {MAIN_PHONE}{member.extension ? ` ext. ${member.extension}` : ''}</p>
               {member.direct && <p>Direct line: {member.direct}</p>}
-              <p>Toll-free: {TOLL_FREE}</p>
             </div>
             <p class="mt-1 mb-3">Email: <a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
             {member.tip && (

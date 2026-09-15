@@ -5,9 +5,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 // Define the language
 const lang = 'fr';
 
-// Standard téléphonique et ligne sans frais de l'entreprise, communs à toute l'équipe
+// Standard téléphonique de l'entreprise, commun à toute l'équipe
 const MAIN_PHONE = '450-676-3356';
-const TOLL_FREE = '1-800-676-6313';
 
 // Team members data
 const teamMembers = [
@@ -55,7 +54,7 @@ const teamMembers = [
     name: 'Lucie Dagenais',
     title: 'Responsable du Service de la Comptabilité',
     direct: '450-676-7707',
-    email: 'ldagenais@assurpv.qc.ca',
+    email: 'interac@assurancespv.com',
     tip: '💡 Astuce de paiement : Pour payer par virement Interac, envoyez à interac@assurancespv.com (attention : la première lettre est un « i » minuscule). Question de sécurité : « service rendu », réponse : « assurance ». Veuillez indiquer votre nom et votre numéro de police dans le commentaire.'
   },
   {
@@ -91,7 +90,6 @@ const teamMembers = [
             <div class="space-y-1 text-gray-700">
               <p>Standard : {MAIN_PHONE}{member.extension ? ` poste ${member.extension}` : ''}</p>
               {member.direct && <p>Ligne directe : {member.direct}</p>}
-              <p>Sans frais : {TOLL_FREE}</p>
             </div>
             <p class="mt-1 mb-3">Courriel : <a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
             {member.tip && (

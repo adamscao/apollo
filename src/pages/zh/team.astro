@@ -5,9 +5,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 // Define the language
 const lang = 'zh';
 
-// 公司总机与800免费专线，全体成员统一
+// 公司总机，全体成员统一
 const MAIN_PHONE = '450-676-3356';
-const TOLL_FREE = '1-800-676-6313';
 
 // Team members data
 const teamMembers = [
@@ -55,7 +54,7 @@ const teamMembers = [
     name: 'Lucie Dagenais',
     title: '会计部负责人',
     direct: '450-676-7707',
-    email: 'ldagenais@assurpv.qc.ca',
+    email: 'interac@assurancespv.com',
     tip: '💡 付款小贴士：如需通过 e-Transfer 直接付款，请转账至 interac@assurancespv.com（注意：首字母是小写字母 i）。安全问题请选择"service rendu"，答案填写"assurance"；并请在备注中注明您的姓名及保单号。'
   },
   {
@@ -91,7 +90,6 @@ const teamMembers = [
             <div class="space-y-1 text-gray-700">
               <p>总机：{MAIN_PHONE}{member.extension ? ` 转 ${member.extension}` : ''}</p>
               {member.direct && <p>直拨：{member.direct}</p>}
-              <p>800专线：{TOLL_FREE}</p>
             </div>
             <p class="mt-1 mb-3">邮箱：<a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
             {member.tip && (
