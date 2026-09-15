@@ -5,12 +5,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 // Define the language
 const lang = 'en';
 
+// Company switchboard and toll-free line, shared by every team member
+const MAIN_PHONE = '450-676-3356';
+const TOLL_FREE = '1-800-676-6313';
+
 // Team members data
 const teamMembers = [
   {
     name: '曹梦阳 (Jacques)',
     title: 'General Manager',
-    phone: '450-912-6302',
+    direct: '450-912-6302',
     extension: '324',
     email: 'jcao@assurancespv.com',
     wechat: '/team/cao.jpg'
@@ -18,7 +22,7 @@ const teamMembers = [
   {
     name: '许媛媛 (Justine)',
     title: 'Account Manager',
-    phone: '450-912-6305',
+    direct: '450-912-6305',
     extension: '323',
     email: 'jxu@assurancespv.com',
     wechat: '/team/xu.jpg'
@@ -26,7 +30,7 @@ const teamMembers = [
   {
     name: '李辉 (Lily)',
     title: 'Account Manager',
-    phone: '450-912-6303',
+    direct: '450-912-6303',
     extension: '303',
     email: 'lli@assurancespv.com',
     wechat: '/team/li.jpg'
@@ -34,7 +38,7 @@ const teamMembers = [
   {
     name: '武冬梅 (May)',
     title: 'Account Manager',
-    phone: '450-912-6304',
+    direct: '450-912-6304',
     extension: '334',
     email: 'mwu@assurancespv.com',
     wechat: '/team/wu.jpg'
@@ -42,10 +46,24 @@ const teamMembers = [
   {
     name: '裴小佳 (Brigitte)',
     title: 'Account Manager',
-    phone: '450-912-4835',
+    direct: '450-912-4835',
     extension: '336',
     email: 'bpei@assurancespv.com',
     wechat: '/team/pei.jpg'
+  },
+  {
+    name: 'Lucie Dagenais',
+    title: 'Head of Accounting',
+    direct: '450-676-7707',
+    email: 'ldagenais@assurpv.qc.ca',
+    tip: '💡 Payment tip: To pay by e-Transfer, send to interac@assurancespv.com (note: the first letter is a lowercase "i"). Security question: "service rendu", answer: "assurance". Please include your name and policy number in the comment field.'
+  },
+  {
+    name: 'France Robidoux',
+    title: 'Business Insurance Assistant',
+    extension: '329',
+    email: 'frobidoux@assurancespv.com',
+    tip: "💡 Finding your policy: To locate your business insurance e-policy, search your inbox for frobidoux@assurancespv.com — all our e-policies are sent from this address. If you can't find it, please check your spam folder."
   }
 ];
 ---
@@ -70,16 +88,25 @@ const teamMembers = [
           <div class="bg-light rounded-lg overflow-hidden shadow-sm p-6">
             <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
             <p class="text-primary font-medium mb-3">{member.title}</p>
-            <p>Phone: {member.phone} (ext. {member.extension})</p>
-            <p class="mb-3">Email: <a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
-            <div class="pt-3 border-t border-gray-200">
-              <button type="button" class="wechat-trigger flex items-center text-primary hover:underline" data-wechat={member.wechat} data-name={member.name}>
-                <span>View WeChat QR Code</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-1 w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+            <div class="space-y-1 text-gray-700">
+              <p>Switchboard: {MAIN_PHONE}{member.extension ? ` ext. ${member.extension}` : ''}</p>
+              {member.direct && <p>Direct line: {member.direct}</p>}
+              <p>Toll-free: {TOLL_FREE}</p>
             </div>
+            <p class="mt-1 mb-3">Email: <a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
+            {member.tip && (
+              <div class="mb-3 p-3 bg-white border-l-4 border-secondary rounded text-sm text-gray-600">{member.tip}</div>
+            )}
+            {member.wechat && (
+              <div class="pt-3 border-t border-gray-200">
+                <button type="button" class="wechat-trigger flex items-center text-primary hover:underline" data-wechat={member.wechat} data-name={member.name}>
+                  <span>View WeChat QR Code</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-1 w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
+            )}
           </div>
         ))}
       </div>

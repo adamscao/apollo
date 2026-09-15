@@ -19,7 +19,7 @@ const subjectTranslations = {
   'business-insurance': {
     zh: '商业保险咨询',
     en: 'Business Insurance Inquiry',
-    fr: "Demande d'Assurance Commerciale"
+    fr: "Demande d'Assurance des Entreprises"
   },
   'claims': {
     zh: '理赔咨询',

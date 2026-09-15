@@ -5,12 +5,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 // Define the language
 const lang = 'fr';
 
+// Standard téléphonique et ligne sans frais de l'entreprise, communs à toute l'équipe
+const MAIN_PHONE = '450-676-3356';
+const TOLL_FREE = '1-800-676-6313';
+
 // Team members data
 const teamMembers = [
   {
     name: '曹梦阳 (Jacques)',
     title: 'Directeur Général',
-    phone: '450-912-6302',
+    direct: '450-912-6302',
     extension: '324',
     email: 'jcao@assurancespv.com',
     wechat: '/team/cao.jpg'
@@ -18,7 +22,7 @@ const teamMembers = [
   {
     name: '许媛媛 (Justine)',
     title: 'Gestionnaire de Compte',
-    phone: '450-912-6305',
+    direct: '450-912-6305',
     extension: '323',
     email: 'jxu@assurancespv.com',
     wechat: '/team/xu.jpg'
@@ -26,7 +30,7 @@ const teamMembers = [
   {
     name: '李辉 (Lily)',
     title: 'Gestionnaire de Compte',
-    phone: '450-912-6303',
+    direct: '450-912-6303',
     extension: '303',
     email: 'lli@assurancespv.com',
     wechat: '/team/li.jpg'
@@ -34,7 +38,7 @@ const teamMembers = [
   {
     name: '武冬梅 (May)',
     title: 'Gestionnaire de Compte',
-    phone: '450-912-6304',
+    direct: '450-912-6304',
     extension: '334',
     email: 'mwu@assurancespv.com',
     wechat: '/team/wu.jpg'
@@ -42,10 +46,24 @@ const teamMembers = [
   {
     name: '裴小佳 (Brigitte)',
     title: 'Gestionnaire de Compte',
-    phone: '450-912-4835',
+    direct: '450-912-4835',
     extension: '336',
     email: 'bpei@assurancespv.com',
     wechat: '/team/pei.jpg'
+  },
+  {
+    name: 'Lucie Dagenais',
+    title: 'Responsable du Service de la Comptabilité',
+    direct: '450-676-7707',
+    email: 'ldagenais@assurpv.qc.ca',
+    tip: '💡 Astuce de paiement : Pour payer par virement Interac, envoyez à interac@assurancespv.com (attention : la première lettre est un « i » minuscule). Question de sécurité : « service rendu », réponse : « assurance ». Veuillez indiquer votre nom et votre numéro de police dans le commentaire.'
+  },
+  {
+    name: 'France Robidoux',
+    title: 'Adjointe, Assurance des Entreprises',
+    extension: '329',
+    email: 'frobidoux@assurancespv.com',
+    tip: "💡 Retrouver votre police : Pour retrouver votre police d'assurance des entreprises électronique, recherchez dans vos courriels l'adresse frobidoux@assurancespv.com — toutes nos polices électroniques sont envoyées à partir de cette adresse. Si vous ne la trouvez pas, veuillez vérifier votre dossier de courrier indésirable."
   }
 ];
 ---
@@ -70,16 +88,25 @@ const teamMembers = [
           <div class="bg-light rounded-lg overflow-hidden shadow-sm p-6">
             <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
             <p class="text-primary font-medium mb-3">{member.title}</p>
-            <p>Téléphone : {member.phone} (poste {member.extension})</p>
-            <p class="mb-3">Courriel : <a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
-            <div class="pt-3 border-t border-gray-200">
-              <button type="button" class="wechat-trigger flex items-center text-primary hover:underline" data-wechat={member.wechat} data-name={member.name}>
-                <span>Voir le code QR WeChat</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-1 w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+            <div class="space-y-1 text-gray-700">
+              <p>Standard : {MAIN_PHONE}{member.extension ? ` poste ${member.extension}` : ''}</p>
+              {member.direct && <p>Ligne directe : {member.direct}</p>}
+              <p>Sans frais : {TOLL_FREE}</p>
             </div>
+            <p class="mt-1 mb-3">Courriel : <a href={`mailto:${member.email}`} class="hover:text-primary">{member.email}</a></p>
+            {member.tip && (
+              <div class="mb-3 p-3 bg-white border-l-4 border-secondary rounded text-sm text-gray-600">{member.tip}</div>
+            )}
+            {member.wechat && (
+              <div class="pt-3 border-t border-gray-200">
+                <button type="button" class="wechat-trigger flex items-center text-primary hover:underline" data-wechat={member.wechat} data-name={member.name}>
+                  <span>Voir le code QR WeChat</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-1 w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
+            )}
           </div>
         ))}
       </div>
