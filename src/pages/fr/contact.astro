@@ -125,30 +125,8 @@ const lang = 'fr';
               </div>
               <div class="ml-4">
                 <h3 class="text-lg font-semibold mb-1">Contact WeChat</h3>
-                <button id="wechatButton" class="mt-2 flex items-center text-primary hover:underline">
-                  <span>Voir le Code QR WeChat</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-1 w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                
-                <!-- Modal de Code QR WeChat (caché par défaut) -->
-                <div id="wechatModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
-                  <div class="bg-white p-6 rounded-lg max-w-md w-full">
-                    <div class="flex justify-between items-center mb-4">
-                      <h3 class="text-lg font-semibold">Contact WeChat</h3>
-                      <button id="closeModal" class="text-gray-500 hover:text-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                      </button>
-                    </div>
-                    <div class="flex flex-col items-center">
-                      <img src="/team/cao.jpg" alt="Code QR WeChat" class="w-full h-auto rounded mb-4" />
-                      <p class="text-center text-sm text-gray-600">Scannez le code QR ci-dessus pour ajouter notre service client WeChat</p>
-                    </div>
-                  </div>
-                </div>
+                <img src="/team/cao.jpg" alt="Code QR WeChat" class="mt-2 w-40 h-40 object-cover rounded-lg border border-gray-200" />
+                <p class="mt-2 text-sm text-gray-600">Scannez le code QR pour ajouter notre service client WeChat</p>
               </div>
             </div>
           </div>
@@ -175,31 +153,7 @@ const lang = 'fr';
   </section>
 
   <script>
-    // Fonctionnalité du Modal de Code QR WeChat
     document.addEventListener('DOMContentLoaded', () => {
-      const wechatButton = document.getElementById('wechatButton');
-      const wechatModal = document.getElementById('wechatModal');
-      const closeModal = document.getElementById('closeModal');
-
-      if (wechatButton && wechatModal && closeModal) {
-        wechatButton.addEventListener('click', () => {
-          wechatModal.classList.remove('hidden');
-          document.body.style.overflow = 'hidden';
-        });
-
-        closeModal.addEventListener('click', () => {
-          wechatModal.classList.add('hidden');
-          document.body.style.overflow = '';
-        });
-
-        wechatModal.addEventListener('click', (e) => {
-          if (e.target === wechatModal) {
-            wechatModal.classList.add('hidden');
-            document.body.style.overflow = '';
-          }
-        });
-      }
-
       // Fonctionnalité de Soumission du Formulaire de Contact
       const contactForm = document.getElementById('contactForm');
       const formMessage = document.getElementById('formMessage');
