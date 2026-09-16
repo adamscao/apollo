@@ -18,6 +18,8 @@ const {
 } = Astro.props;
 
 // Language mapping for UI elements
+const currentYear = new Date().getFullYear();
+
 const uiText = {
   zh: {
     home: "首页",
@@ -29,7 +31,7 @@ const uiText = {
     contact: "联系我们",
     language: "语言",
     footer: {
-      rights: "版权所有 © 2025 阿波罗保险公司",
+      rights: `版权所有 © ${currentYear} 阿波罗保险公司`,
       backToTop: "返回顶部"
     }
   },
@@ -43,7 +45,7 @@ const uiText = {
     contact: "Contact",
     language: "Language",
     footer: {
-      rights: "Copyright © 2025 Apollo Insurance",
+      rights: `Copyright © ${currentYear} Apollo Insurance`,
       backToTop: "Back to Top"
     }
   },
@@ -57,7 +59,7 @@ const uiText = {
     contact: "Contact",
     language: "Langue",
     footer: {
-      rights: "Droits d'auteur © 2025 Assurance Apollo",
+      rights: `Droits d'auteur © ${currentYear} Assurance Apollo`,
       backToTop: "Haut de Page"
     }
   }
@@ -229,6 +231,11 @@ const currentPath = Astro.url.pathname;
               <p class="mb-1">
                 <a href="tel:+14506763356" class="hover:text-secondary transition-colors">
                   (450) 676-3356 {lang === 'zh' ? '(法语)' : lang === 'fr' ? '(Français)' : '(French)'}
+                </a>
+              </p>
+              <p class="mb-1">
+                <a href="tel:+14509126302" class="hover:text-secondary transition-colors">
+                  (450) 912-6302
                 </a>
               </p>
               <p>
