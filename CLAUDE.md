@@ -23,21 +23,22 @@ There is no test suite or linter configured in this project.
 
 ## Architecture
 
-### Trilingual routing (no i18n framework)
+### Multilingual routing (no i18n framework)
 
-The site is fully trilingual with no use of Astro's built-in i18n routing — instead, content is duplicated into three parallel directory trees:
+The site is available in four languages with no use of Astro's built-in i18n routing — instead, content is duplicated into four parallel directory trees:
 
 - `src/pages/zh/*` — Simplified Chinese (the default/primary language)
+- `src/pages/zh-hant/*` — Traditional Chinese (generated from `zh` with OpenCC `s2tw`, e.g. `nix shell nixpkgs#opencc -c opencc -c s2tw.json -i in -o out`, then hand-fixed: `lang` constants, 併→並 where needed, 聯繫我們→聯絡我們)
 - `src/pages/en/*` — English
 - `src/pages/fr/*` — French
 
-Each tree has the same seven pages: `index`, `about`, `services`, `team`, `claims`, `faq`, `contact`. `src/pages/index.astro` (the site root) does a client-side redirect to `/zh/`.
+Each tree has the same eight pages: `index`, `about`, `services`, `team`, `claims`, `faq`, `news`, `contact`. `news` is currently a placeholder. `src/pages/index.astro` (the site root) does a client-side redirect to `/zh/`.
 
-**When adding, removing, or restructuring a page, the change must be replicated across all three language directories** to keep them in sync. There's no shared content source — each locale's copy is written directly into its own `.astro` file.
+**When adding, removing, or restructuring a page, the change must be replicated across all four language directories** to keep them in sync. There's no shared content source — each locale's copy is written directly into its own `.astro` file.
 
 ### Layouts
 
-- `src/layouts/BaseLayout.astro` is the real layout used by every page. It takes `title`, `description`, and `lang` (`'zh' | 'en' | 'fr'`) props, and contains inline per-language UI strings (nav labels, footer copy, language-switcher labels) in a `uiText`/translation-object pattern. Header nav links and the language switcher are generated from `lang` and `Astro.url.pathname`, so cross-language links are produced by swapping the `/zh|en|fr` path prefix rather than through routing config.
+- `src/layouts/BaseLayout.astro` is the real layout used by every page. It takes `title`, `description`, and `lang` (`'zh' | 'zh-hant' | 'en' | 'fr'`) props, and contains inline per-language UI strings (nav labels, footer copy, language-switcher labels) in a `uiText`/translation-object pattern. Header nav links and the language switcher are generated from `lang` and `Astro.url.pathname`, so cross-language links are produced by swapping the `/zh-hant|zh|en|fr` path prefix rather than through routing config (`zh-hant` must be matched before `zh`).
 - `src/layouts/Layout.astro` is the unmodified Astro starter template — not used by any real page. Leave it alone or remove it; don't build new pages on it.
 
 New pages/sections should follow the same pattern as existing ones: add localized strings inline (or in a small object) per page/component rather than introducing a new i18n mechanism, unless asked to.
@@ -47,8 +48,8 @@ New pages/sections should follow the same pattern as existing ones: add localize
 The contact form (`src/pages/{lang}/contact.astro`) submits via `fetch` to `/.netlify/functions/submit-contact`, handled by `netlify/functions/submit-contact.js`. That function:
 
 - Uses `Resend` (env var `RESEND_API_KEY`) to send two emails per submission: a localized confirmation to the submitter and a notification to `ADMIN_EMAIL` (default `info@apolloins.ca`), from `FROM_EMAIL` (default `noreply@notifications.apolloins.ca`).
-- Selects email copy/subject based on the `lang` field in the POST body (`zh`/`en`/`fr`), with English as the fallback.
-- All three languages' email templates and subject-line translations live inline in this one file — keep them in sync when editing the confirmation/admin templates or the subject list.
+- Selects email copy/subject based on the `lang` field in the POST body (`zh`/`zh-hant`/`en`/`fr`), with English as the fallback.
+- All four languages' email templates and subject-line translations live inline in this one file — keep them in sync when editing the confirmation/admin templates or the subject list.
 
 ### Styling
 

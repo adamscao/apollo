@@ -3,13 +3,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 // Define the language
-const lang = 'en';
+const lang = 'zh-hant';
 ---
 
-<BaseLayout title="About Us" lang={lang}>
+<BaseLayout title="公司介紹" lang={lang}>
   <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
     <div class="container">
-      <h1 class="text-center">About Us</h1>
+      <h1 class="text-center">公司介紹</h1>
     </div>
   </section>
 
@@ -17,32 +17,32 @@ const lang = 'en';
     <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
         <div>
-          <h2 class="mb-6">About Apollo Insurance</h2>
-          <p class="mb-4">Apollo Insurance was established in 2020 as a partner of Assurances Provencher Verreault, located in Brossard on the South Shore of Montreal, Canada. We specialize in providing quality insurance services to our clients, including home insurance, auto insurance, and business insurance.</p>
-          <p class="mb-4">Our team members have extensive experience in the insurance industry, are fluent in French, English, Mandarin and Cantonese, and can provide native language service to clients, ensuring barrier-free communication and helping clients fully understand the details and terms of various insurance products.</p>
-          <p>Apollo Insurance is committed to providing professional, comprehensive insurance solutions to protect our clients' property and interests from loss, making their lives and work more secure.</p>
+          <h2 class="mb-6">關於阿波羅保險公司</h2>
+          <p class="mb-4">阿波羅保險公司成立於2020年，是Assurances Provencher Verreault的合作伙伴，位於加拿大蒙特利爾南岸Brossard地區。我們專注於為客戶提供優質的保險服務，包括房屋保險、汽車保險和商業保險等多種保險產品。</p>
+          <p class="mb-4">我們的團隊成員擁有豐富的保險行業經驗，精通法語、英語、普通話、粵語，能夠為客戶提供母語服務，確保溝通無障礙，並幫助客戶全面瞭解各類保險產品的細節和條款。</p>
+          <p>阿波羅保險公司致力於為客戶提供專業、全面的保險解決方案，保護客戶的財產和利益不受損失，讓客戶的生活和工作更加安心。</p>
         </div>
         <div class="bg-light p-8 rounded-lg">
-          <img src="/company.png" alt="Apollo Insurance Company" class="w-full aspect-video object-cover rounded-lg" />
+          <img src="/company.png" alt="阿波羅保險公司" class="w-full aspect-video object-cover rounded-lg" />
         </div>
       </div>
 
       <div class="mb-16">
-        <h2 class="text-center mb-10">Our Mission & Vision</h2>
+        <h2 class="text-center mb-10">我們的使命與願景</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-light p-8 rounded-lg">
-            <h3 class="mb-4 text-primary">Mission</h3>
-            <p>To help clients better understand and choose the right insurance solutions through professional and transparent insurance services, protecting their homes, vehicles, and businesses, making their lives in Canada more secure and convenient.</p>
+            <h3 class="mb-4 text-primary">使命</h3>
+            <p>通過提供專業、透明的保險服務，幫助客戶更好地瞭解和選擇適合自己的保險方案，保護他們的家庭、車輛和企業，讓他們在加拿大的生活更加安心、便利。</p>
           </div>
           <div class="bg-light p-8 rounded-lg">
-            <h3 class="mb-4 text-primary">Vision</h3>
-            <p>To become the most trusted insurance service provider in our local community, helping each client find the most suitable insurance solutions through professional knowledge and quality service, achieving property protection and risk management.</p>
+            <h3 class="mb-4 text-primary">願景</h3>
+            <p>成為本地社區最受信賴的保險服務提供商，通過專業知識和優質服務，幫助每一位客戶找到最適合的保險方案，實現財產保障和風險管理。</p>
           </div>
         </div>
       </div>
 
       <div>
-        <h2 class="text-center mb-10">Our Core Values</h2>
+        <h2 class="text-center mb-10">我們的核心價值觀</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="border border-gray-200 p-6 rounded-lg text-center">
             <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -50,8 +50,8 @@ const lang = 'en';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Integrity & Reliability</h3>
-            <p>We provide transparent and reliable insurance services based on integrity, building long-term trust relationships with clients.</p>
+            <h3 class="text-xl font-semibold mb-3">誠信可靠</h3>
+            <p>我們以誠信為基礎，為客戶提供透明、可靠的保險服務，建立長期互信關係。</p>
           </div>
           <div class="border border-gray-200 p-6 rounded-lg text-center">
             <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -59,8 +59,8 @@ const lang = 'en';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Professional Efficiency</h3>
-            <p>Our team has professional knowledge and rich experience, enabling efficient handling of client needs and insurance claims.</p>
+            <h3 class="text-xl font-semibold mb-3">專業高效</h3>
+            <p>我們的團隊擁有專業知識和豐富經驗，能夠高效處理客戶需求和保險理賠。</p>
           </div>
           <div class="border border-gray-200 p-6 rounded-lg text-center">
             <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -68,8 +68,8 @@ const lang = 'en';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Client First</h3>
-            <p>We always put our clients' needs first, providing personalized insurance solutions and attentive service experiences.</p>
+            <h3 class="text-xl font-semibold mb-3">客戶至上</h3>
+            <p>我們始終將客戶的需求放在首位，提供個性化的保險方案和貼心的服務體驗。</p>
           </div>
         </div>
       </div>
@@ -78,8 +78,8 @@ const lang = 'en';
 
   <section class="py-12 bg-light">
     <div class="container text-center">
-      <h2 class="mb-6">Benefits of Working with Apollo Insurance</h2>
-      <p class="max-w-3xl mx-auto mb-12">Choose Apollo Insurance for a professional, attentive insurance service experience</p>
+      <h2 class="mb-6">與阿波羅保險公司合作的優勢</h2>
+      <p class="max-w-3xl mx-auto mb-12">選擇阿波羅保險公司，您將獲得專業、貼心的保險服務體驗</p>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -88,8 +88,8 @@ const lang = 'en';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Multilingual Service</h3>
-          <p>We provide service in French, English, Mandarin and Cantonese, eliminating language barriers so you fully understand your insurance coverage.</p>
+          <h3 class="text-lg font-semibold mb-2">多語言服務</h3>
+          <p>我們提供法語、英語、普通話、粵語服務，消除語言障礙，讓您充分了解保險內容。</p>
         </div>
         
         <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -98,8 +98,8 @@ const lang = 'en';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Personalized Plans</h3>
-          <p>Custom insurance solutions based on your specific needs, ensuring comprehensive and affordable coverage.</p>
+          <h3 class="text-lg font-semibold mb-2">個性化方案</h3>
+          <p>根據您的具體需求定製保險方案，確保保障全面且經濟實惠。</p>
         </div>
         
         <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -108,8 +108,8 @@ const lang = 'en';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Quick Response</h3>
-          <p>We promise to quickly respond to your inquiries and needs, providing timely service support.</p>
+          <h3 class="text-lg font-semibold mb-2">快速響應</h3>
+          <p>我們承諾迅速回應您的諮詢和需求，提供及時的服務支持。</p>
         </div>
         
         <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -118,8 +118,8 @@ const lang = 'en';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Professional Team</h3>
-          <p>Our team has extensive experience in the insurance industry and can provide you with professional advice.</p>
+          <h3 class="text-lg font-semibold mb-2">專業團隊</h3>
+          <p>我們的團隊擁有豐富的保險行業經驗，能夠為您提供專業建議。</p>
         </div>
       </div>
     </div>
@@ -127,9 +127,9 @@ const lang = 'en';
 
   <section class="py-12">
     <div class="container text-center">
-      <h2 class="mb-6">Contact Us to Learn More</h2>
-      <p class="max-w-2xl mx-auto mb-8">If you would like to learn more about Apollo Insurance or have any insurance-related questions, please feel free to contact us at any time.</p>
-      <a href={`/${lang}/contact`} class="btn-primary">Contact Us</a>
+      <h2 class="mb-6">聯絡我們瞭解更多</h2>
+      <p class="max-w-2xl mx-auto mb-8">如果您想了解更多關於阿波羅保險公司的信息，或有任何保險相關的問題，歡迎隨時聯絡我們。</p>
+      <a href={`/${lang}/contact`} class="btn-primary">聯絡我們</a>
     </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'fr';
+
+// Placeholder categories — the news feed itself is not implemented yet.
+const categories = [
+  {
+    title: 'Nouvelles de l\'entreprise',
+    description: 'Annonces, événements et mises à jour des services d\'Assurance Apollo.',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4'
+  },
+  {
+    title: 'Industrie de l\'assurance',
+    description: 'Changements réglementaires, tendances du marché et conseils pratiques en assurance.',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.040A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+  },
+  {
+    title: 'Nouvelles locales',
+    description: 'Actualités de la communauté locale qui touchent votre vie et votre protection.',
+    icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z'
+  }
+];
+---
+
+<BaseLayout title="Actualités" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">Actualités</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">Les dernières nouvelles d'Assurance Apollo, de l'industrie de l'assurance et de notre communauté locale</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {categories.map(category => (
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={category.icon} />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">{category.title}</h3>
+            <p>{category.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-light rounded-lg p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Bientôt disponible</h2>
+        <p class="max-w-2xl mx-auto mb-6">Notre section d'actualités est en préparation. Restez à l'écoute! En attendant, n'hésitez pas à nous contacter pour toute question.</p>
+        <a href={`/${lang}/contact`} class="btn-primary">Contactez-nous</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

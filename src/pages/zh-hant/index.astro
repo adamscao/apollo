@@ -1,0 +1,102 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'zh-hant';
+---
+
+<BaseLayout title="首頁" lang={lang}>
+  <section class="bg-gradient-to-br from-primary to-accent text-white py-16 md:py-24">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="mb-6">阿波羅保險公司</h1>
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href={`/${lang}/services#home`} class="btn-secondary">房屋保險</a>
+          <a href={`/${lang}/services#auto`} class="btn-secondary">汽車保險</a>
+          <a href={`/${lang}/services#business`} class="btn-secondary">商業保險</a>
+          <a href={`/${lang}/contact`} class="btn bg-white text-primary hover:bg-opacity-90">聯絡我們</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <h2 class="text-center mb-12">公司簡介</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="mb-4">阿波羅保險公司是Assurances Provencher Verreault的合作伙伴，位於加拿大蒙特利爾南岸Brossard，專注為客戶提供專業的保險服務。</p>
+          <p class="mb-4">我們的團隊擁有豐富的行業經驗，能夠用您的母語為您提供周到的服務，確保您完全瞭解各種保險選項，並選擇最適合您需求的保障方案。</p>
+          <p class="mb-6">無論您是需要房屋保險、汽車保險還是商業保險，我們都能為您提供量身定製的解決方案，讓您的生活和財產得到全面保障。</p>
+          <a href={`/${lang}/about`} class="btn-primary">瞭解更多</a>
+        </div>
+        <div class="bg-light p-12 rounded-lg">
+          <img src="/company.png" alt="阿波羅保險公司" class="w-full h-full object-cover rounded-lg" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">我們的服務</h2>
+      <p class="text-center mb-12 max-w-3xl mx-auto">我們提供全面的保險解決方案，保護您的家庭、車輛和企業。</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- 房屋保險 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/house.png" alt="房屋保險" class="w-full aspect-video object-cover" />
+          <div class="p-6">
+            <h3 class="mb-3">房屋保險</h3>
+            <p class="mb-4">保護您的家庭和財產不受自然災害、火災、盜竊等風險的影響。</p>
+            <a href={`/${lang}/services#home`} class="text-primary font-medium hover:underline inline-flex items-center">
+              瞭解詳情
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 汽車保險 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/car.png" alt="汽車保險" class="w-full aspect-video object-cover" />
+          <div class="p-6">
+            <h3 class="mb-3">汽車保險</h3>
+            <p class="mb-4">提供全面的汽車保障，保護您免受事故、盜竊和自然災害造成的損失。</p>
+            <a href={`/${lang}/services#auto`} class="text-primary font-medium hover:underline inline-flex items-center">
+              瞭解詳情
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 商業保險 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/business.png" alt="商業保險" class="w-full aspect-video object-cover" />
+          <div class="p-6">
+            <h3 class="mb-3">商業保險</h3>
+            <p class="mb-4">為您的企業提供全面保障，包括財產、責任、業務中斷等多種保險方案。</p>
+            <a href={`/${lang}/services#business`} class="text-primary font-medium hover:underline inline-flex items-center">
+              瞭解詳情
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container text-center">
+      <h2 class="mb-6">聯絡我們獲取免費諮詢</h2>
+      <p class="max-w-2xl mx-auto mb-8">不確定哪種保險最適合您？我們的專業顧問隨時為您提供幫助，解答您的疑問，並為您制定最合適的保險方案。</p>
+      <a href={`/${lang}/contact`} class="btn-primary">立即聯繫</a>
+    </div>
+  </section>
+</BaseLayout>

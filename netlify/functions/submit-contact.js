@@ -8,26 +8,31 @@ const fromEmail = process.env.FROM_EMAIL || 'noreply@notifications.apolloins.ca'
 const subjectTranslations = {
   'home-insurance': {
     zh: '房屋保险咨询',
+    'zh-hant': '房屋保險諮詢',
     en: 'Home Insurance Inquiry',
     fr: "Demande d'Assurance Habitation"
   },
   'auto-insurance': {
     zh: '汽车保险咨询',
+    'zh-hant': '汽車保險諮詢',
     en: 'Auto Insurance Inquiry',
     fr: "Demande d'Assurance Auto"
   },
   'business-insurance': {
     zh: '商业保险咨询',
+    'zh-hant': '商業保險諮詢',
     en: 'Business Insurance Inquiry',
     fr: "Demande d'Assurance des Entreprises"
   },
   'claims': {
     zh: '理赔咨询',
+    'zh-hant': '理賠諮詢',
     en: 'Claims Inquiry',
     fr: 'Demande de Réclamation'
   },
   'other': {
     zh: '其他问题',
+    'zh-hant': '其他問題',
     en: 'Other Inquiry',
     fr: 'Autre Demande'
   }
@@ -72,12 +77,61 @@ const getConfirmationEmailTemplate = (data, lang) => {
                 <p>${data.message.replace(/\n/g, '<br>')}</p>
               </div>
 
-              <p>如有紧急事项，请直接致电：<strong>+1 (514) 123-4567</strong></p>
+              <p>如有紧急事项，请直接致电：<strong>+1 (450) 912-6302</strong></p>
 
               <div class="footer">
                 <p>阿波罗保险公司 | Apollo Insurance | Assurance Apollo</p>
                 <p>Brossard, Quebec, Canada</p>
-                <p>电话: +1 (514) 123-4567 | 邮箱: info@apolloins.ca</p>
+                <p>电话: +1 (450) 912-6302 | 邮箱: info@apolloins.ca</p>
+              </div>
+            </div>
+          </div>
+        </body>
+        </html>
+      `
+    },
+    'zh-hant': {
+      subject: '感謝您聯絡阿波羅保險公司',
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: linear-gradient(to right, #2563eb, #7c3aed); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+            .content { background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px; }
+            .info-box { background: white; padding: 20px; margin: 20px 0; border-left: 4px solid #2563eb; border-radius: 4px; }
+            .footer { text-align: center; margin-top: 30px; color: #6b7280; font-size: 14px; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h1>阿波羅保險公司</h1>
+              <p>Apollo Insurance</p>
+            </div>
+            <div class="content">
+              <h2>您好，${data.name}！</h2>
+              <p>感謝您聯絡阿波羅保險公司。我們已收到您的諮詢信息，我們的專業團隊將在1-2個工作日內與您聯絡。</p>
+
+              <div class="info-box">
+                <h3>您的諮詢信息：</h3>
+                <p><strong>姓名：</strong> ${data.name}</p>
+                <p><strong>電話：</strong> ${data.phone}</p>
+                <p><strong>郵箱：</strong> ${data.email}</p>
+                <p><strong>諮詢主題：</strong> ${subjectTranslations[data.subject]?.['zh-hant'] || data.subject}</p>
+                <p><strong>留言內容：</strong></p>
+                <p>${data.message.replace(/\n/g, '<br>')}</p>
+              </div>
+
+              <p>如有緊急事項，請直接致電：<strong>+1 (450) 912-6302</strong></p>
+
+              <div class="footer">
+                <p>阿波羅保險公司 | Apollo Insurance | Assurance Apollo</p>
+                <p>Brossard, Quebec, Canada</p>
+                <p>電話: +1 (450) 912-6302 | 郵箱: info@apolloins.ca</p>
               </div>
             </div>
           </div>
@@ -121,12 +175,12 @@ const getConfirmationEmailTemplate = (data, lang) => {
                 <p>${data.message.replace(/\n/g, '<br>')}</p>
               </div>
 
-              <p>For urgent matters, please call us directly at: <strong>+1 (514) 123-4567</strong></p>
+              <p>For urgent matters, please call us directly at: <strong>+1 (450) 912-6302</strong></p>
 
               <div class="footer">
                 <p>Apollo Insurance | 阿波罗保险公司 | Assurance Apollo</p>
                 <p>Brossard, Quebec, Canada</p>
-                <p>Phone: +1 (514) 123-4567 | Email: info@apolloins.ca</p>
+                <p>Phone: +1 (450) 912-6302 | Email: info@apolloins.ca</p>
               </div>
             </div>
           </div>
@@ -170,12 +224,12 @@ const getConfirmationEmailTemplate = (data, lang) => {
                 <p>${data.message.replace(/\n/g, '<br>')}</p>
               </div>
 
-              <p>Pour toute urgence, veuillez nous appeler directement au: <strong>+1 (514) 123-4567</strong></p>
+              <p>Pour toute urgence, veuillez nous appeler directement au: <strong>+1 (450) 912-6302</strong></p>
 
               <div class="footer">
                 <p>Assurance Apollo | 阿波罗保险公司 | Apollo Insurance</p>
                 <p>Brossard, Québec, Canada</p>
-                <p>Téléphone: +1 (514) 123-4567 | Courriel: info@apolloins.ca</p>
+                <p>Téléphone: +1 (450) 912-6302 | Courriel: info@apolloins.ca</p>
               </div>
             </div>
           </div>

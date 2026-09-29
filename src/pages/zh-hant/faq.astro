@@ -1,0 +1,403 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Define the language
+const lang = 'zh-hant';
+
+// FAQ items grouped by category - 魁北克車險專業FAQ
+const faqGroups = [
+  {
+    title: "基本概念與保障結構",
+    items: [
+      {
+        question: "魁省車險的整體架構是什麼？政府和商業保險分別管什麼？",
+        answer: `<p>魁省採取「人傷政府統一保障 + 商業公司承保車輛/財產損失」的模式。</p>
+
+<p><strong>人身傷害：</strong><br>
+無論責任方是誰，魁省境內的交通事故造成的人身傷害（受傷、致殘、死亡）均由魁省政府的汽車保險協會 SAAQ (Société de l'assurance automobile du Québec) 負責賠付。</p>
+
+<p><strong>車輛和財產損失：</strong><br>
+由商業保險公司承保，包括您自己車輛的損失，以及對第三方造成的財產損失（例如，撞到別人的車、房屋等）。</p>`
+      },
+      {
+        question: "「單險」和「全險」在魁省怎麼理解？",
+        answer: `<p>這是民間俗稱，並非官方術語。</p>
+
+<p><strong>單險 (One-Way / 第三方責任險)：</strong><br>
+通常指僅投保法律強制的第三方責任險 (Civil Liability)。<br>
+此險種主要用於賠付對他人的財產造成的損失，法定最低保額通常較高（如200萬加元）。<br>
+如果您駕車在魁省外（如安省、美國）撞傷了人，也由此險種賠付。</p>
+
+<p><strong>特例：</strong><br>
+在魁省境內，如果您只有「單險」且事故中您完全沒有責任，對方也能被找到，您的保險公司通常也會賠付您的車輛損失。</p>
+
+<p><strong>全險 (Two-Way)：</strong><br>
+通常指除了第三方責任險外，還投保了保障自己車輛損失的險種，主要包括撞擊險 (Collision) 和非撞擊險 (Comprehensive)。</p>`
+      },
+      {
+        question: "「三大險」和「三小險」分別指什麼？",
+        answer: `<p><strong>三大險：</strong></p>
+<ol class="ml-6 space-y-2">
+  <li><strong>第三方責任險 (Civil Liability)：</strong><br>
+  保障對第三方財產造成的損失。</li>
+
+  <li><strong>撞擊險 (Collision / Perils of Collision)：</strong><br>
+  保障您的車輛在「有責」或「部分有責」的碰撞事故中的損失。<br>
+  理賠時需支付免賠額（Deductible）。<br>
+  若您「無責」，則通常無需支付免賠額。<br>
+  理賠上限為事故發生時車輛的市場價值（折舊價）。</li>
+
+  <li><strong>非撞擊險 (Comprehensive / Specified Perils)：</strong><br>
+  保障非碰撞原因造成的車輛損失，主要包括：偷盜、故意破壞、玻璃破碎、火災、水災（洪水）、冰雹等。<br>
+  理賠時也需支付免賠額。</li>
+</ol>
+
+<p><strong>三小險（通常為附加險，Endorsements）：</strong></p>
+<ol class="ml-6 space-y-2">
+  <li><strong>拖車險 (Towing)：</strong><br>
+  特指發生事故後，將車輛拖至修理廠的費用。<br>
+  這不同於因車輛故障（如沒油、沒電）而使用的道路救援服務。</li>
+
+  <li><strong>租車/代步車險 (Loss of Use)：</strong><br>
+  在您的車輛因事故維修期間，保險公司提供代步車的保障。<br>
+  通常有每日額度和總天數限制（如不超過三個月）。</li>
+
+  <li><strong>意外傷害險 (Accident Benefits)：</strong><br>
+  對車禍中的人身意外傷害提供的小額補充賠款，例如，根據受傷、致殘或死亡等級，提供如 $2,000, $10,000, $15,000 的賠償金。</li>
+</ol>`
+      },
+      {
+        question: "什麼是「新車險」（Replacement Cost Endorsement）？",
+        answer: `<p>這是一個需要額外購買的附加險（Endorsement 43）。</p>
+
+<p>如果您的新車在保險期內發生全損（被盜或報廢），保險公司會賠償一輛同款新車，而不是按折舊後的市場價賠付。</p>`
+      }
+    ]
+  },
+  {
+    title: "責任與理賠規則",
+    items: [
+      {
+        question: "發生車輛碰撞後，哪個保險公司來賠？",
+        answer: `<p>在魁省，遵循「直接賠償」(Direct Compensation) 原則。</p>
+
+<p>即無論事故責任在誰，您車輛的損失都由您自己的保險公司負責賠付。<br>
+保險公司之間會根據責任劃分再進行內部結算。<br>
+這簡化了流程，您無需直接與對方保險公司交涉。</p>`
+      },
+      {
+        question: "如果我只有「單險」（第三方責任險），我的車損能賠嗎？",
+        answer: `<p><strong>您有責任：</strong><br>
+您的車損不賠，您需要自費修車。</p>
+
+<p><strong>您無責任：</strong><br>
+在魁省境內，且能明確找到責任方，您的保險公司會賠付您的車損。</p>
+
+<p><strong>對方肇事逃逸：</strong><br>
+如果您無法找到責任方，僅有「單險」通常無法獲得賠付。</p>`
+      },
+      {
+        question: "免賠額（Deductible）如何運作？如何選擇？",
+        answer: `<p>免賠額是理賠時您需要自己承擔的部分。</p>
+
+<p><strong>運作：</strong><br>
+通常適用於撞擊險和非撞擊險。<br>
+例如，您的撞擊險免賠額為$500，修車費用為$3000，您需支付$500，保險公司支付$2500。<br>
+如果您在事故中負一半責任，則可能需支付一半的免賠額（$250）。</p>
+
+<p><strong>選擇：</strong><br>
+免賠額越高，保費越低。</p>
+
+<p><strong>建議：</strong><br>
+對於新移民、無魁省駕照、首次在魁省投保，或25歲以下的單身男性等「高風險」群體，初期可選擇較低的免賠額（如撞擊險$500，非撞擊險$250），以降低出險時的自付壓力。</p>
+
+<p><strong>注意：</strong><br>
+魁省車險中的「不計免賠」附加險並不十分流行，因為即使是免賠額內的小額理賠，也可能導致次年保費上漲，往往得不償失。</p>`
+      }
+    ]
+  },
+  {
+    title: "事故處理與理賠流程",
+    items: [
+      {
+        question: "發生輕微事故時，第一步該怎麼做？",
+        answer: `<ol class="ml-6 space-y-3">
+  <li><strong>確保安全：</strong><br>
+  檢查有無人員受傷。<br>
+  如有，立即撥打911。</li>
+
+  <li><strong>拍照取證：</strong><br>
+  在移動車輛前，對車輛的相對位置、碰撞點、車牌、現場環境進行拍照。</li>
+
+  <li><strong>移至安全區：</strong><br>
+  將車輛移至路邊等安全位置，避免阻礙交通。</li>
+
+  <li><strong>交換信息：</strong><br>
+  與對方司機交換駕照、車輛註冊文件（Registration）和保險證明（Proof of Insurance）信息，並記錄對方電話。</li>
+
+  <li><strong>填寫事故報告：</strong><br>
+  與對方共同填寫《聯合報告》（Joint Report / Constat à l'amiable）。<br>
+  即使有爭議，也各自填寫自己的部分。<br>
+  建議車上常備此表格。<br>
+  無需等待警察（除非有人受傷或嚴重爭議）。</li>
+
+  <li><strong>聯繫保險公司：</strong><br>
+  儘快向您的保險公司報案。</li>
+</ol>`
+      },
+      {
+        question: "如果對方肇事逃逸怎麼辦？",
+        answer: `<ol class="ml-6 space-y-3">
+  <li><strong>立即報警：</strong><br>
+  撥打911或當地警察局電話，獲取一個報警號 (Police Report Number)。</li>
+
+  <li><strong>聯繫保險公司：</strong><br>
+  將報警號提供給您的保險公司並報案。<br>
+  在這種情況下，如果您有撞擊險，通常可以獲得理賠（可能需支付免賠額）。</li>
+</ol>`
+      },
+      {
+        question: "修車一定要去保險公司指定車行嗎？",
+        answer: `<p>不強制。</p>
+
+<p><strong>指定車行：</strong><br>
+流程通常更快捷、順暢，代步車安排也方便。<br>
+您只需支付免賠額（如有），其他由車行和保險公司直接結算。</p>
+
+<p><strong>自選車行：</strong><br>
+您需要先通知保險公司，等待理賠專員（Adjuster）前往您選擇的車行進行定損。<br>
+如果車行報價高於保險公司的估損，差價部分可能需要您自己承擔。</p>`
+      }
+    ]
+  },
+  {
+    title: "駕駛人與使用場景",
+    items: [
+      {
+        question: "誰應該被列為保單上的駕駛員？",
+        answer: `<p>除了車主（主要駕駛員），任何經常或定期使用該車輛的人都應被申報為附加駕駛員。</p>
+
+<p>這包括：配偶或同居伴侶、達到駕駛年齡的同住子女、甚至長期共用車輛的室友。</p>
+
+<p><strong>重要：</strong><br>
+夫妻即使不住在同一地址，如果共用一輛車，也需要正確申報。<br>
+相反，住在一起的朋友（室友）若共用車輛，可以添加到同一張保單上。<br>
+未如實申報可能導致理賠被拒或保費追溯上調。</p>`
+      },
+      {
+        question: "把車借給朋友開，出事故了誰負責？",
+        answer: `<p>責任鏈條通常是：</p>
+
+<ol class="ml-6 space-y-2">
+  <li><strong>第一責任方：</strong>車主的保險公司。<br>
+  事故會記錄在車主的保單上，影響車主未來的保費和保險記錄。</li>
+
+  <li><strong>第二責任方：</strong>駕駛員（您的朋友）自己的保險公司（如果他有車險）。</li>
+
+  <li><strong>第三責任方：</strong>駕駛員自掏腰包。</li>
+</ol>
+
+<p><strong>建議：</strong><br>
+為避免影響自己的保險記錄，若朋友需要長期用車，建議他們租車並購買相應保險。</p>`
+      },
+      {
+        question: "租車需要單獨買保險嗎？",
+        answer: `<p><strong>非魁省居民：</strong><br>
+強烈建議購買租車公司提供的全險。</p>
+
+<p><strong>魁省居民：</strong><br>
+如果您自己的車輛已購買了「全險」（含撞擊和非撞擊險），您的保險通常可以延伸覆蓋到您租用的車輛（請務必事先與您的保險顧問確認）。</p>`
+      },
+      {
+        question: "夫妻一方開車不慎撞到另一方，保險賠嗎？",
+        answer: `<p>會的。</p>
+
+<p>車輛的損傷由車險理賠，人身傷害由SAAQ理賠。</p>`
+      }
+    ]
+  },
+  {
+    title: "特殊情況與常見問題",
+    items: [
+      {
+        question: "酒駕發生事故，保險賠不賠？",
+        answer: `<p>通常會賠付第三方損失，但後果極其嚴重：</p>
+
+<p><strong>刑事責任：</strong><br>
+面臨吊銷駕照、罰款甚至監禁。</p>
+
+<p><strong>保險後果：</strong><br>
+保險公司會在次年拒保 (Refuse to Renew)，或強制要求安裝酒精測試點火鎖定裝置。<br>
+一旦有拒保記錄，未來幾年內獲得其他公司的承保將變得非常困難且保費極高。</p>`
+      },
+      {
+        question: "哪些情況保險公司會拒絕理賠？",
+        answer: `<p>主要涉及欺詐行為：</p>
+
+<ol class="ml-6 space-y-2">
+  <li><strong>保單作假：</strong>提供虛假的投保信息。</li>
+  <li><strong>駕照作假：</strong>使用無效或偽造的駕照。</li>
+  <li><strong>謊報信息：</strong>在理賠時謊報事故經過、損失情況等。</li>
+</ol>
+
+<p>如果理賠過程中理賠專員發現騙保，會直接取消保單並拒賠。</p>`
+      },
+      {
+        question: "如果信用不好，被多家保險公司拒保怎麼辦？",
+        answer: `<p>如果連續被五家保險公司拒保，您可以向魁省保險信息中心（GAA）申訴。</p>
+
+<p>此時，第五家拒保您的公司必須為您提供一份保單，但保障非常有限，通常僅提供法律要求的最低第三方責任險（例如50萬加元保額）。</p>`
+      },
+      {
+        question: "行車記錄儀（Dashcam）有用嗎？",
+        answer: `<p>非常有用。</p>
+
+<p>尤其是在界定事故責任有爭議時，行車記錄儀的錄像可以作為強有力的證據。</p>`
+      },
+      {
+        question: "有2輛以上的車，可以只買一輛車的保險嗎？",
+        answer: `<p>不可以。<br>
+每輛在路上行駛的註冊車輛都必須有保險。</p>
+
+<p>但如果某輛車計劃長期（如超過60天）不使用，可以聯繫保險公司申請暫停部分保障（如撞擊險），從而減免部分保費。</p>`
+      },
+      {
+        question: "在4S店或修車行內發生事故，由誰理賠？",
+        answer: `<p>由4S店或車行的商業保險（車行險，Garage Policy）負責理賠。</p>`
+      },
+      {
+        question: "在魁省開安省牌照的車安全嗎？",
+        answer: `<p>理論上是合法的，但存在一些差異。</p>
+
+<p>如果發生事故，人身和車輛損失都將由安省的保險公司按安省規則處理。</p>
+
+<p>相比之下，使用魁省牌照和保險，至少人身傷害部分能獲得魁省SAAQ的統一保障，流程可能更清晰。</p>`
+      }
+    ]
+  },
+  {
+    title: "保費與影響因素",
+    items: [
+      {
+        question: "發生理賠對來年保費有什麼影響？",
+        answer: `<p>影響程度由小到大依次是：</p>
+
+<ol class="ml-6 space-y-2">
+  <li>當年沒有發生事故。</li>
+  <li>發生一次事故但您無責任。</li>
+  <li>發生一次事故且您有責任。</li>
+  <li>一年內發生兩次或以上事故。</li>
+</ol>
+
+<p>如果一年內發生兩次有責任的事故，很可能導致保險公司在續保時拒保，這將嚴重影響您的信用記錄和未來投保。</p>`
+      },
+      {
+        question: "哪些因素會顯著影響保費？",
+        answer: `<p>常見因子包括：</p>
+
+<ul class="ml-6 space-y-1 list-disc">
+  <li>年齡</li>
+  <li>婚姻狀態</li>
+  <li>駕駛記錄（違章/事故）</li>
+  <li>保險與駕齡</li>
+  <li>住址（郵編區風險）</li>
+  <li>車輛型號與價值</li>
+  <li>用途（通勤/商用/休閒）</li>
+  <li>年里程</li>
+  <li>個人信用（需同意查詢且因公司而異）</li>
+</ul>`
+      },
+      {
+        question: "如何合理降低保費？",
+        answer: `<ul class="ml-6 space-y-2 list-disc">
+  <li>選擇合適的免賠額與險別組合（舊車可考慮降低車損部分）。</li>
+  <li>如實申報主要駕駛人與用途，避免事後追溯上調。</li>
+  <li>保持良好駕駛與按時繳費記錄。</li>
+  <li>爭取多保合一折扣（如在同一公司投保房屋和汽車保險）。</li>
+  <li>車輛有防盜措施、停放在安全的車庫或低風險郵編區域，都可能獲得更優價格。</li>
+</ul>`
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title="常見問題" lang={lang}>
+  <section class="bg-gradient-to-r from-primary to-accent text-white py-12 md:py-16">
+    <div class="container">
+      <h1 class="text-center">常見問題</h1>
+      <p class="text-center max-w-3xl mx-auto mt-4">找到您關於保險的問題解答</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container">
+      <!-- FAQ目錄導航 -->
+      <div class="mb-12">
+        <h2 class="text-center mb-8">問題分類</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          {faqGroups.map((group, index) => (
+            <a href={`#section-${index}`} class="px-4 py-2 bg-light rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+              {group.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ內容 -->
+      {faqGroups.map((group, groupIndex) => (
+        <div id={`section-${groupIndex}`} class="mb-16 last:mb-0 scroll-mt-24">
+          <h2 class="text-2xl font-bold mb-6 border-b pb-2">{group.title}</h2>
+          <div class="space-y-6">
+            {group.items.map((item, itemIndex) => (
+              <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <details class="group">
+                  <summary class="flex justify-between items-center cursor-pointer p-6 bg-light">
+                    <h3 class="text-lg font-semibold">{item.question}</h3>
+                    <span class="text-primary transform group-open:rotate-180 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div class="p-6 pt-0">
+                    <div class="space-y-3" set:html={item.answer}></div>
+                  </div>
+                </details>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- 未解答問題 -->
+      <div class="bg-light p-8 rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-4">沒有找到您的問題？</h2>
+        <p class="mb-6">如果您有其他問題或需要更詳細的解答，請隨時聯絡我們的客服團隊。</p>
+        <a href={`/${lang}/contact`} class="btn-primary">聯絡我們</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // 處理FAQ手風琴效果
+    document.addEventListener('DOMContentLoaded', () => {
+      // 平滑滾動到錨點
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>
