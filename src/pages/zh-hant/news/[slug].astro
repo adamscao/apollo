@@ -1,0 +1,13 @@
+---
+import NewsArticle from '../../../components/NewsArticle.astro';
+import { getNews, splitId } from '../../../lib/news';
+
+export async function getStaticPaths() {
+  const items = await getNews('zh-hant');
+  return items.map(entry => ({ params: { slug: splitId(entry.id).slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<NewsArticle lang="zh-hant" entry={entry} />

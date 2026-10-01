@@ -47,3 +47,34 @@
     @apply btn bg-secondary text-dark hover:bg-opacity-90;
   }
 }
+
+/* Body copy of news articles (rendered Markdown) */
+@layer components {
+  .news-body {
+    @apply text-lg leading-relaxed;
+  }
+  .news-body > * + * {
+    @apply mt-4;
+  }
+  .news-body h2 {
+    @apply text-2xl md:text-2xl lg:text-2xl mt-10;
+  }
+  .news-body h3 {
+    @apply text-xl md:text-xl lg:text-xl mt-8;
+  }
+  .news-body a {
+    @apply text-primary underline;
+  }
+  .news-body ul {
+    @apply list-disc pl-6 space-y-1;
+  }
+  .news-body ol {
+    @apply list-decimal pl-6 space-y-1;
+  }
+  .news-body blockquote {
+    @apply border-l-4 border-secondary pl-4 text-gray-700;
+  }
+  .news-body img {
+    @apply rounded-lg;
+  }
+}
