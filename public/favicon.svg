@@ -1,9 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102">
   <style>
     .a { fill: #1F4E79; }
     @media (prefers-color-scheme: dark) { .a { fill: #FFFFFF; } }
   </style>
-  <polygon class="a" points="50,6 92,94 77,94 50,37.4 23,94 8,94" />
-  <rect class="a" x="26" y="72" width="48" height="7" />
-  <path d="M38 72 A12 12 0 0 1 62 72 Z" fill="#FFC000" />
+  <defs>
+    <mask id="gap" maskUnits="userSpaceOnUse" x="-1" y="-1" width="102" height="102">
+      <rect x="-1" y="-1" width="102" height="102" fill="white" />
+      <g fill="black" stroke="black" stroke-width="7" stroke-linejoin="round">
+        <polygon points="50,48 78,94 65.5,94 50,68.54 34.5,94 22,94" /><rect x="37.07" y="80" width="25.87" height="6.5" />
+      </g>
+    </mask>
+  </defs>
+  <g mask="url(#gap)">
+    <path d="M50 11L50 2M64.16 13.82L67.6 5.5M76.16 21.84L82.53 15.47M84.18 33.84L92.5 30.4M87 48L96 48M84.18 62.16L92.5 65.6M76.16 74.16L82.53 80.53M64.16 82.18L67.6 90.5M50 85L50 94M35.84 82.18L32.4 90.5M23.84 74.16L17.47 80.53M15.82 62.16L7.5 65.6M13 48L4 48M15.82 33.84L7.5 30.4M23.84 21.84L17.47 15.47M35.84 13.82L32.4 5.5" fill="none" stroke="#FFC000" stroke-width="4.5" stroke-linecap="round" />
+    <circle cx="50" cy="48" r="31" fill="#FFC000" />
+  </g>
+  <g class="a">
+    <polygon points="50,48 78,94 65.5,94 50,68.54 34.5,94 22,94" /><rect x="37.07" y="80" width="25.87" height="6.5" />
+  </g>
 </svg>
